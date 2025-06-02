@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bvu2vnxybqles"]
+
+[ext_resource type="Texture2D" uid="uid://c55xrcs6taamb" path="res://Resources/Assets/hammer.png" id="1_iljxg"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_og4i5"]
+
+[resource]
+script = ExtResource("1_og4i5")
+item_name = "Hammer"
+description = "A heavy tool used for breaking debris or constructing sturdy buildings."
+item_texture = ExtResource("1_iljxg")
+type = 1
+uses = Array[int]([0, 1])
+rarity = 0
+stackable = false
+max_stack = 1
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

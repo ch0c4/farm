@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://di4fhe6lxdgur"]
+
+[ext_resource type="Script" uid="uid://bxuy17w7hdq15" path="res://UI/InventoryPanel/Scripts/inventory_panel.gd" id="1_a2wm3"]
+[ext_resource type="PackedScene" uid="uid://cp64vey8nrl3x" path="res://UI/InventorySlot/inventory_slot.tscn" id="1_dpd7n"]
+
+[node name="InventoryPanel" type="Control"]
+z_index = 10
+custom_minimum_size = Vector2(492, 368)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 492.0
+offset_bottom = 368.0
+script = ExtResource("1_a2wm3")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_right = 492.0
+offset_bottom = 368.0
+columns = 4
+
+[node name="InventorySlot" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(4, 4)
+
+[node name="InventorySlot2" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot3" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot4" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot5" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot6" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot7" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot8" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot9" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot10" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot11" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot12" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot13" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot14" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot15" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)
+
+[node name="InventorySlot16" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+layout_mode = 2
+drag_preview_pivot_offset = Vector2(5, 5)

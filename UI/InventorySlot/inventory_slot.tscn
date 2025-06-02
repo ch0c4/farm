@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp64vey8nrl3x"]
+
+[ext_resource type="Texture2D" uid="uid://iaxc6qqaedlh" path="res://UI/Assets/nine_path_panel_wood2.png" id="1_b5ke6"]
+[ext_resource type="Script" uid="uid://bqt8jioopbunh" path="res://UI/InventorySlot/Scripts/inventory_slot.gd" id="1_flgjv"]
+[ext_resource type="FontFile" uid="uid://bwk2lwjjc583n" path="res://UI/Assets/8-BIT WONDER.TTF" id="3_3bklg"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_3bklg"]
+
+[node name="InventorySlot" type="NinePatchRect"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 120.0
+offset_bottom = 120.0
+texture = ExtResource("1_b5ke6")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("1_flgjv")
+drag_preview_pivot_offset = null
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_3bklg")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -36.0
+offset_right = -3.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_3bklg")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 1

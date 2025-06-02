@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjcbrl1yfrqjf"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_64krw"]
+[ext_resource type="Texture2D" uid="uid://ugvvihr5tmsq" path="res://Resources/Assets/rock.png" id="3_w258u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbgpo"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bmrc"]
+
+[node name="Gem" instance=ExtResource("1_64krw")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_w258u")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_rbgpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_1bmrc")

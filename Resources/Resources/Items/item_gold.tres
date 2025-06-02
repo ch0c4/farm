@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dnl8y4i84aytg"]
+
+[ext_resource type="Texture2D" uid="uid://bc8aaypa0jh1u" path="res://Resources/Assets/gem_gold.png" id="1_jqqld"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_x1iaq"]
+
+[resource]
+script = ExtResource("1_x1iaq")
+item_name = "Gold"
+description = "A shiny, valuable metal used for crafting high-tier items and trading. Its rarity makes it highly sought after."
+item_texture = ExtResource("1_jqqld")
+type = 0
+uses = Array[int]([1, 6])
+rarity = 2
+stackable = true
+max_stack = 99
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

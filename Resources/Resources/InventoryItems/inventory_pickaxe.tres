@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dpywea6snxult"]
+
+[ext_resource type="Resource" uid="uid://b5fjrjma4i86w" path="res://Resources/Resources/Items/item_pickaxe.tres" id="1_hbr8y"]
+[ext_resource type="Script" uid="uid://cyoju5s7w8kig" path="res://Resources/Scripts/inventory_item.gd" id="2_rp7h5"]
+
+[resource]
+script = ExtResource("2_rp7h5")
+item = ExtResource("1_hbr8y")
+quantity = 1
+metadata/_custom_type_script = "uid://cyoju5s7w8kig"

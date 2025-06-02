@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c80da23ipmiuw"]
+
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_8sofr"]
+[ext_resource type="Texture2D" uid="uid://dw4hpj5n5sajd" path="res://Resources/Assets/axe.png" id="1_wwno5"]
+
+[resource]
+script = ExtResource("1_8sofr")
+item_name = "Axe"
+description = "A basic tool for chopping down trees and breaking wooden objects. Durable and reliable."
+item_texture = ExtResource("1_wwno5")
+type = 1
+uses = Array[int]([4])
+rarity = 0
+stackable = false
+max_stack = 1
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvea7tu522w1g"]
+
+[ext_resource type="Texture2D" uid="uid://dhylimtbswrr4" path="res://Entities/Collectables/Tree/Assets/spr_deco_tree_01_strip4.png" id="1_6vtk1"]
+[ext_resource type="Script" uid="uid://40urlxpifd5h" path="res://Entities/Collectables/Tree/Scripts/tree.gd" id="1_8obxg"]
+[ext_resource type="Script" uid="uid://dv80ktdb2t8y4" path="res://Scripts/CharacterSystems/stats.gd" id="2_v6kd4"]
+[ext_resource type="Script" uid="uid://bycq11x05njdk" path="res://Scripts/DamageBoxes/hurtbox.gd" id="3_8obxg"]
+[ext_resource type="PackedScene" uid="uid://cfvkendtj4j3q" path="res://Entities/Spawnables/Log/log.tscn" id="3_v6kd4"]
+
+[sub_resource type="Resource" id="Resource_rpdn4"]
+script = ExtResource("2_v6kd4")
+max_health = 3.0
+metadata/_custom_type_script = "uid://dv80ktdb2t8y4"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20gv0"]
+atlas = ExtResource("1_6vtk1")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8obxg"]
+atlas = ExtResource("1_6vtk1")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wf8q"]
+atlas = ExtResource("1_6vtk1")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6kd4"]
+atlas = ExtResource("1_6vtk1")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_del60"]
+atlas = ExtResource("1_6vtk1")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_labum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20gv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8obxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wf8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6kd4")
+}],
+"loop": false,
+"name": &"chopped",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_del60")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vtk1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20gv0"]
+radius = 14.0357
+
+[node name="Tree" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_8obxg")
+stats = SubResource("Resource_rpdn4")
+log_scene = ExtResource("3_v6kd4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_labum")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6vtk1")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("3_8obxg")
+metadata/_custom_type_script = "uid://bycq11x05njdk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_20gv0")

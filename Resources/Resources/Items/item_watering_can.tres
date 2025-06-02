@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dssbd657x128s"]
+
+[ext_resource type="Texture2D" uid="uid://4mml0leyw1pv" path="res://Resources/Assets/water.png" id="1_abj87"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_vo1ip"]
+
+[resource]
+script = ExtResource("1_vo1ip")
+item_name = "Watering Can"
+description = "A refillable container used to water crops and keep plants healthy."
+item_texture = ExtResource("1_abj87")
+type = 1
+uses = Array[int]([4])
+rarity = 0
+stackable = false
+max_stack = 1
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

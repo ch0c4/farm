@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bis11c8vnchcn"]
+
+[ext_resource type="Texture2D" uid="uid://jcf4u6l6qy3a" path="res://Entities/Collectables/Mine/Assets/nature_tileset.png" id="1_edc1k"]
+
+[resource]
+atlas = ExtResource("1_edc1k")
+region = Rect2(64, 224, 16, 16)

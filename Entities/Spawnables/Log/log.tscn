@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfvkendtj4j3q"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_n3gwx"]
+[ext_resource type="Resource" uid="uid://ddu4lmsqiyq7b" path="res://Resources/Resources/Items/item_log.tres" id="2_60pbm"]
+[ext_resource type="Texture2D" uid="uid://bfeq5etn5c4xy" path="res://Resources/Assets/wood.png" id="3_doy6p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60pbm"]
+radius = 4.12311
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_doy6p"]
+radius = 8.0
+
+[node name="Log" instance=ExtResource("1_n3gwx")]
+item = ExtResource("2_60pbm")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_doy6p")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_60pbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_doy6p")
