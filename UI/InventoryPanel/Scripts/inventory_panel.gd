@@ -1,6 +1,6 @@
 extends Control
 
-@onready var grid_container: GridContainer = $GridContainer
+@onready var grid_container: GridContainer = %InventoryGridContainer
 
 func _ready() -> void:
 	visible = false

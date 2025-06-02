@@ -12,72 +12,73 @@ offset_right = 492.0
 offset_bottom = 368.0
 script = ExtResource("1_a2wm3")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="InventoryGridContainer" type="GridContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 offset_right = 492.0
 offset_bottom = 368.0
 columns = 4
 
-[node name="InventorySlot" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(4, 4)
 
-[node name="InventorySlot2" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot2" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot3" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot3" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot4" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot4" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot5" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot5" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot6" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot6" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot7" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot7" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot8" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot8" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot9" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot9" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot10" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot10" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot11" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot11" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot12" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot12" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot13" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot13" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot14" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot14" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot15" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot15" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
 
-[node name="InventorySlot16" parent="GridContainer" instance=ExtResource("1_dpd7n")]
+[node name="InventorySlot16" parent="InventoryGridContainer" instance=ExtResource("1_dpd7n")]
 layout_mode = 2
 drag_preview_pivot_offset = Vector2(5, 5)
