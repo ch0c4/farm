@@ -1,13 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5crra75vu0vo"]
+[gd_scene load_steps=8 format=3 uid="uid://b5crra75vu0vo"]
 
-[ext_resource type="Texture2D" uid="uid://bis11c8vnchcn" path="res://Entities/Collectables/Mine/Resources/full_gold.tres" id="1_ch23n"]
 [ext_resource type="Script" uid="uid://cp26xbyxv6k8h" path="res://Entities/Collectables/Mine/Scripts/mine.gd" id="1_mpw1g"]
 [ext_resource type="Script" uid="uid://bycq11x05njdk" path="res://Scripts/DamageBoxes/hurtbox.gd" id="2_gqf74"]
 [ext_resource type="Script" uid="uid://dv80ktdb2t8y4" path="res://Scripts/CharacterSystems/stats.gd" id="2_ma4hy"]
 [ext_resource type="Texture2D" uid="uid://crq6i558ecxl8" path="res://Entities/Collectables/Mine/Resources/half_gold.tres" id="2_mnov5"]
-[ext_resource type="PackedScene" uid="uid://c2pa2fncwfrw7" path="res://Entities/Spawnables/Gem/rock_gem.tscn" id="3_k7b4d"]
-[ext_resource type="Texture2D" uid="uid://bxqr53n8myuvr" path="res://Entities/Collectables/Mine/Resources/empty_gold.tres" id="3_ma4hy"]
-[ext_resource type="PackedScene" uid="uid://c82bheq22c5gv" path="res://Entities/Spawnables/Gem/gold_gem.tscn" id="4_k7b4d"]
 
 [sub_resource type="Resource" id="Resource_38mdd"]
 script = ExtResource("2_ma4hy")
@@ -25,11 +21,6 @@ collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_mpw1g")
 stats = SubResource("Resource_38mdd")
-common_gem_scene = ExtResource("3_k7b4d")
-rare_gem_scene = ExtResource("4_k7b4d")
-full_texture = ExtResource("1_ch23n")
-half_texture = ExtResource("2_mnov5")
-empty_texture = ExtResource("3_ma4hy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
@@ -42,7 +33,6 @@ shape = SubResource("CapsuleShape2D_gqf74")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
-one_shot = true
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 64

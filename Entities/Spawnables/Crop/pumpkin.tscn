@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbklit7u0mdda"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_5bhi4"]
+[ext_resource type="Resource" uid="uid://ctbpm5yvm27pw" path="res://Resources/Resources/Items/Crops/item_pumpkin.tres" id="2_5bhi4"]
+[ext_resource type="Texture2D" uid="uid://d2dk3dhjliaxg" path="res://Resources/Assets/Crops/pumpkin_05.png" id="3_5bhi4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wbtb"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjbjd"]
+radius = 7.0
+
+[node name="Pumpkin" instance=ExtResource("1_5bhi4")]
+item = ExtResource("2_5bhi4")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_5bhi4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_3wbtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_xjbjd")

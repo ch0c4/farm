@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://1r5vytd05ecm"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_0qkib"]
+[ext_resource type="Resource" uid="uid://l3smcsouvytc" path="res://Resources/Resources/Items/Crops/item_cauliflower.tres" id="2_0qkib"]
+[ext_resource type="Texture2D" uid="uid://bc5te48axy5du" path="res://Resources/Assets/Crops/cauliflower_05.png" id="3_3oa6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wbtb"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjbjd"]
+radius = 7.0
+
+[node name="Cauliflower" instance=ExtResource("1_0qkib")]
+item = ExtResource("2_0qkib")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_3oa6m")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_3wbtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_xjbjd")

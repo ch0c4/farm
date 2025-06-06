@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dhsxxwas61mux"]
+
+[ext_resource type="Texture2D" uid="uid://dwikb4ou73dnw" path="res://Scenes/Assets/floor_tileset_sunnyside.png" id="1_cbkt6"]
+
+[resource]
+atlas = ExtResource("1_cbkt6")
+region = Rect2(512, 80, 16, 16)

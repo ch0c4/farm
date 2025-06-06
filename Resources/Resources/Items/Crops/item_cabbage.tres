@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://faldt3ln71au"]
+
+[ext_resource type="Texture2D" uid="uid://sbfqdjn2gak7" path="res://Resources/Assets/Crops/beetroot_05.png" id="1_e85kl"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_4ctpx"]
+
+[resource]
+script = ExtResource("2_4ctpx")
+item_name = "Beetroot"
+description = "A deep red root vegetable with a sweet, earthy flavor."
+item_texture = ExtResource("1_e85kl")
+type = 3
+uses = Array[int]([1])
+rarity = 1
+stackable = true
+max_stack = 20
+price = 80
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

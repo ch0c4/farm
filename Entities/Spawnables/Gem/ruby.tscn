@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl5uvtkqy6dgq"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_14vqa"]
+[ext_resource type="Resource" uid="uid://cc8dofjbf57vb" path="res://Resources/Resources/Items/Gems/item_ruby.tres" id="2_14vqa"]
+[ext_resource type="Texture2D" uid="uid://cn03ghda4hmka" path="res://Resources/Assets/Gems/gem_ruby.png" id="3_14vqa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tn3hx"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23tbx"]
+radius = 5.0
+
+[node name="Ruby" instance=ExtResource("1_14vqa")]
+item = ExtResource("2_14vqa")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_14vqa")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_tn3hx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_23tbx")

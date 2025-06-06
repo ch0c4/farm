@@ -4,7 +4,7 @@ extends Node
 signal item_selected(inventory_item: InventoryItem)
 
 @warning_ignore("unused_signal")
-signal drop_item
+signal force_update
 
 
 var selected_index := 0

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://rvekwl6gs6"]
+
+[ext_resource type="Texture2D" uid="uid://dbwcbqygjoxbo" path="res://Resources/Assets/Crops/kale_05.png" id="1_8vqjg"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_4nxob"]
+
+[resource]
+script = ExtResource("2_4nxob")
+item_name = "Kale"
+description = "A hardy green crop packed with nutrients."
+item_texture = ExtResource("1_8vqjg")
+type = 3
+uses = Array[int]([6, 1])
+rarity = 1
+stackable = true
+max_stack = 20
+price = 90
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

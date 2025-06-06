@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ctbpm5yvm27pw"]
+
+[ext_resource type="Texture2D" uid="uid://d2dk3dhjliaxg" path="res://Resources/Assets/Crops/pumpkin_05.png" id="1_rjytd"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_nsq14"]
+
+[resource]
+script = ExtResource("2_nsq14")
+item_name = "Pumpkin"
+description = "A big, festive gourd often used in cooking and carving."
+item_texture = ExtResource("1_rjytd")
+type = 3
+uses = Array[int]([6, 1])
+rarity = 2
+stackable = true
+max_stack = 20
+price = 250
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

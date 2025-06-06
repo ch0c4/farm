@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://l3smcsouvytc"]
+
+[ext_resource type="Texture2D" uid="uid://blw3hp62v0oab" path="res://Resources/Assets/Crops/cabbage_05.png" id="1_wke7s"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_rnwdi"]
+
+[resource]
+script = ExtResource("2_rnwdi")
+item_name = "Carrot"
+description = "A crunchy orange root vegetable loved by animals."
+item_texture = ExtResource("1_wke7s")
+type = 3
+uses = Array[int]([6, 1])
+rarity = 0
+stackable = true
+max_stack = 20
+price = 50
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

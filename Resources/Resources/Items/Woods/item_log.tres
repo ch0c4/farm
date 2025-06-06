@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ddu4lmsqiyq7b"]
+
+[ext_resource type="Texture2D" uid="uid://bfeq5etn5c4xy" path="res://Resources/Assets/Woods/wood.png" id="1_t3jq0"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_nhdeo"]
+
+[resource]
+script = ExtResource("2_nhdeo")
+item_name = "Log"
+description = "A sturdy chunk of wood, freshly chopped from a nearby tree. Useful for crafting tools, building structures, or fueling a campfire. Its rough texture and earthy scent make it a staple resource on the farm."
+item_texture = ExtResource("1_t3jq0")
+type = 0
+uses = Array[int]([0, 1, 2])
+rarity = 0
+stackable = true
+max_stack = 99
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

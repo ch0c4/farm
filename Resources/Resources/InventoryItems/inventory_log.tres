@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bkxjov54wwgdf"]
 
 [ext_resource type="Script" uid="uid://cyoju5s7w8kig" path="res://Resources/Scripts/inventory_item.gd" id="1_1j3se"]
-[ext_resource type="Resource" uid="uid://ddu4lmsqiyq7b" path="res://Resources/Resources/Items/item_log.tres" id="1_dnoql"]
+[ext_resource type="Resource" uid="uid://ddu4lmsqiyq7b" path="res://Resources/Resources/Items/Woods/item_log.tres" id="1_dnoql"]
 
 [resource]
 script = ExtResource("1_1j3se")

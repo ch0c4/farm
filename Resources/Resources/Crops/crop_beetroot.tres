@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://bcnofk73jopf6"]
+
+[ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="1_h7bjy"]
+[ext_resource type="Texture2D" uid="uid://28pvw1m5jpwb" path="res://Resources/Assets/Crops/beetroot_00.png" id="1_kvrlv"]
+[ext_resource type="Texture2D" uid="uid://bn2fto85imsag" path="res://Resources/Assets/Crops/beetroot_01.png" id="2_6ttr1"]
+[ext_resource type="Texture2D" uid="uid://b3v0msr36thg2" path="res://Resources/Assets/Crops/beetroot_02.png" id="3_7hyph"]
+[ext_resource type="Texture2D" uid="uid://c1v3pgfxd3r1f" path="res://Resources/Assets/Crops/beetroot_03.png" id="4_wj7j0"]
+[ext_resource type="Texture2D" uid="uid://hptk1s57y44c" path="res://Resources/Assets/Crops/beetroot_04.png" id="5_f2871"]
+[ext_resource type="PackedScene" uid="uid://bfyrrhpf052c5" path="res://Entities/Spawnables/Crop/beetroot.tscn" id="8_6ttr1"]
+
+[resource]
+script = ExtResource("1_h7bjy")
+crop_name = "Beetroot"
+crops_textures = Array[Texture2D]([ExtResource("1_kvrlv"), ExtResource("2_6ttr1"), ExtResource("3_7hyph"), ExtResource("4_wj7j0"), ExtResource("5_f2871")])
+spawn_crop_item = ExtResource("8_6ttr1")
+nb_spawn_crop = 1
+nb_day_of_growning = 6
+metadata/_custom_type_script = "uid://8hxrw36sff1q"

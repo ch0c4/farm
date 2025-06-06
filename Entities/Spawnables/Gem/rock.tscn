@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://emqb8jhat6f3"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_184w0"]
+[ext_resource type="Resource" uid="uid://14immnucilhf" path="res://Resources/Resources/Items/Gems/item_rock.tres" id="2_kbjte"]
+[ext_resource type="Texture2D" uid="uid://ugvvihr5tmsq" path="res://Resources/Assets/Gems/rock.png" id="3_tn3hx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tn3hx"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23tbx"]
+radius = 5.0
+
+[node name="Rock" instance=ExtResource("1_184w0")]
+item = ExtResource("2_kbjte")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_tn3hx")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_tn3hx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_23tbx")

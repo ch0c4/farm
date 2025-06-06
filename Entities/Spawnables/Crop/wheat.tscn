@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://na648dm688ds"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_lta5d"]
+[ext_resource type="Resource" uid="uid://cpu6vvi2v8f84" path="res://Resources/Resources/Items/Crops/item_wheat.tres" id="2_i2je8"]
+[ext_resource type="Texture2D" uid="uid://brjlw4gues6rh" path="res://Resources/Assets/Crops/wheat_05.png" id="3_rby2l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wbtb"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjbjd"]
+radius = 8.0
+
+[node name="Wheat" instance=ExtResource("1_lta5d")]
+item = ExtResource("2_i2je8")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_rby2l")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_3wbtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_xjbjd")

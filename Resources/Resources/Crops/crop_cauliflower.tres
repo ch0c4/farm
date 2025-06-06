@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://dbeus7k6pmutu"]
+
+[ext_resource type="Texture2D" uid="uid://m4yxnmyktbrr" path="res://Resources/Assets/Crops/cauliflower_00.png" id="1_ie6ff"]
+[ext_resource type="Texture2D" uid="uid://clfm6ss8y3bxq" path="res://Resources/Assets/Crops/cauliflower_01.png" id="2_cw657"]
+[ext_resource type="Texture2D" uid="uid://b1vk1lmuo5226" path="res://Resources/Assets/Crops/cauliflower_02.png" id="3_yuajf"]
+[ext_resource type="Texture2D" uid="uid://dqsnxpx6jr670" path="res://Resources/Assets/Crops/cauliflower_03.png" id="4_hs4n0"]
+[ext_resource type="Texture2D" uid="uid://eiykjcs7c6bm" path="res://Resources/Assets/Crops/cauliflower_04.png" id="5_owrtv"]
+[ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_apedu"]
+[ext_resource type="PackedScene" uid="uid://1r5vytd05ecm" path="res://Entities/Spawnables/Crop/cauliflower.tscn" id="7_apedu"]
+
+[resource]
+script = ExtResource("6_apedu")
+crop_name = "Carrot"
+crops_textures = Array[Texture2D]([ExtResource("1_ie6ff"), ExtResource("2_cw657"), ExtResource("3_yuajf"), ExtResource("4_hs4n0"), ExtResource("5_owrtv")])
+spawn_crop_item = ExtResource("7_apedu")
+nb_spawn_crop = 1
+nb_day_of_growning = 12
+metadata/_custom_type_script = "uid://8hxrw36sff1q"

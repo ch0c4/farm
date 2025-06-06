@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cpu6vvi2v8f84"]
+
+[ext_resource type="Texture2D" uid="uid://brjlw4gues6rh" path="res://Resources/Assets/Crops/wheat_05.png" id="1_k8acs"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_r20tg"]
+
+[resource]
+script = ExtResource("2_r20tg")
+item_name = "Wheat"
+description = "A basic grain used in flour and feed."
+item_texture = ExtResource("1_k8acs")
+type = 3
+uses = Array[int]([6, 1])
+rarity = 0
+stackable = true
+max_stack = 99
+price = 30
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

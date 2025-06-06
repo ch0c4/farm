@@ -10,13 +10,13 @@
 custom_minimum_size = Vector2(120, 120)
 offset_right = 120.0
 offset_bottom = 120.0
+mouse_filter = 1
 texture = ExtResource("1_b5ke6")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 script = ExtResource("1_flgjv")
-drag_preview_pivot_offset = null
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(80, 80)
@@ -36,6 +36,7 @@ texture = SubResource("ImageTexture_3bklg")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

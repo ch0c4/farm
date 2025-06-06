@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfyrrhpf052c5"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_lddbb"]
+[ext_resource type="Resource" uid="uid://b173uiai3mgm0" path="res://Resources/Resources/Items/Crops/item_beetroot.tres" id="2_3wbtb"]
+[ext_resource type="Texture2D" uid="uid://sbfqdjn2gak7" path="res://Resources/Assets/Crops/beetroot_05.png" id="2_kd83r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wbtb"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjbjd"]
+
+[node name="Beetroot" instance=ExtResource("1_lddbb")]
+item = ExtResource("2_3wbtb")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kd83r")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_3wbtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_xjbjd")

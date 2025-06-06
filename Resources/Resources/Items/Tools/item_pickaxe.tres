@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b5fjrjma4i86w"]
+
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_25f3x"]
+[ext_resource type="Texture2D" uid="uid://dxty0b46qh73l" path="res://Resources/Assets/Tools/pickaxe.png" id="1_vjwan"]
+
+[resource]
+script = ExtResource("1_25f3x")
+item_name = "Pickaxe"
+description = "A sturdy tool for breaking rocks and mining ores. Essential for uncovering underground resources."
+item_texture = ExtResource("1_vjwan")
+type = 1
+uses = Array[int]([4])
+rarity = 0
+stackable = false
+max_stack = 1
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

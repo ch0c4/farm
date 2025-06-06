@@ -1,6 +1,10 @@
 @tool
 class_name InventorySlot extends NinePatchRect
 
+const DOUBLE_CLICK_TIME := 0.3
+
+signal slot_double_clicked(slot: InventorySlot)
+
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var quantity_label: Label = $Label
 
@@ -8,7 +12,7 @@ class_name InventorySlot extends NinePatchRect
 
 @export var drag_preview_pivot_offset := Vector2(5.0, 5.0)
 
-
+var _last_click_time := 0.0
 var item_data = null
 
 
@@ -43,8 +47,18 @@ func _ready() -> void:
 	quantity_label.visible = false
 
 
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		print("click")
+		var now = Time.get_ticks_msec() / 1000.0
+		if now - _last_click_time < DOUBLE_CLICK_TIME:
+			slot_double_clicked.emit(self)
+		_last_click_time = now
+
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	return typeof(data) == TYPE_DICTIONARY and data.has("item_data") and data.has("source_slot")
+	return (typeof(data) == TYPE_DICTIONARY 
+		and data.has("item_data") 
+		and data.has("source_slot"))
 
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
@@ -58,7 +72,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 	set_inventory_item(incoming_data)
 	source_slot.set_inventory_item(temp)
-	InventorySystem.drop_item.emit()
+	InventorySystem.force_update.emit()
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:

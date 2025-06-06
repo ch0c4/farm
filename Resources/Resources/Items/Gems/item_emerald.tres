@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://7kvhvbh2k4y8"]
+
+[ext_resource type="Texture2D" uid="uid://cn03ghda4hmka" path="res://Resources/Assets/Gems/gem_ruby.png" id="1_kxde3"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_x56ib"]
+
+[resource]
+script = ExtResource("2_x56ib")
+item_name = "Ruby"
+description = "A precious red gemstone prized for its beauty and rarity. Used in high-end crafting and valuable trades."
+item_texture = ExtResource("1_kxde3")
+type = 0
+uses = Array[int]([1, 6])
+rarity = 3
+stackable = true
+max_stack = 99
+price = 450
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

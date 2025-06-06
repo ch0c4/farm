@@ -10,3 +10,5 @@ class_name Item extends Resource
 @export var rarity: ItemConstants.ITEM_RARITY
 @export var stackable: bool = true
 @export_range(1, 99) var max_stack: int = 99
+
+@export var price: int = 1

@@ -1,0 +1,176 @@
+[gd_scene load_steps=16 format=3 uid="uid://dpi36hpfwogp6"]
+
+[ext_resource type="Script" uid="uid://ba3x6gpkbm6ib" path="res://Entities/Collectables/Crop/Scripts/crop.gd" id="1_1jgn3"]
+[ext_resource type="Texture2D" uid="uid://dwtxeffr8upfl" path="res://Entities/Collectables/Crop/Assets/soil_00.png" id="1_clsij"]
+[ext_resource type="Script" uid="uid://bycq11x05njdk" path="res://Scripts/DamageBoxes/hurtbox.gd" id="2_1jgn3"]
+[ext_resource type="Script" uid="uid://b0bbe0bk7tj88" path="res://Scripts/StateMachine/state_machine.gd" id="4_wamks"]
+[ext_resource type="Script" uid="uid://bfce7u8ta4lmg" path="res://Entities/Collectables/Crop/Scripts/States/crop_soil_state.gd" id="5_l2ks4"]
+[ext_resource type="Script" uid="uid://7ohq6nwpt6db" path="res://Scripts/StateMachine/state.gd" id="5_r3mj7"]
+[ext_resource type="Texture2D" uid="uid://5u5y5k766wc0" path="res://Entities/Collectables/Crop/Assets/soil_01.png" id="6_ich42"]
+[ext_resource type="Texture2D" uid="uid://67x7chobpa56" path="res://Entities/Collectables/Crop/Assets/soil_02.png" id="7_fkmlf"]
+[ext_resource type="Texture2D" uid="uid://dlm66vs4hoe" path="res://Entities/Collectables/Crop/Assets/soil_03.png" id="8_lsfp4"]
+[ext_resource type="Script" uid="uid://bq4ugh20vu7tk" path="res://Entities/Collectables/Crop/Scripts/States/crop_root_state.gd" id="9_fkmlf"]
+
+[sub_resource type="Animation" id="Animation_lsfp4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoilSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jjmrb"]
+resource_name = "not_watered"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoilSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fkmlf"]
+resource_name = "watered"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoilSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.831373, 0.831373, 0.831373, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jjmrb"]
+_data = {
+&"RESET": SubResource("Animation_lsfp4"),
+&"not_watered": SubResource("Animation_jjmrb"),
+&"watered": SubResource("Animation_fkmlf")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clsij"]
+radius = 8.0
+
+[node name="Crop" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1jgn3")
+
+[node name="SoilSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_clsij")
+
+[node name="CropSprite" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jjmrb")
+}
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("2_1jgn3")
+metadata/_custom_type_script = "uid://bycq11x05njdk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_clsij")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_wamks")
+initial_state = NodePath("Soil_0")
+metadata/_custom_type_script = "uid://b0bbe0bk7tj88"
+
+[node name="Soil_0" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "soil_sprite", "crop_sprite")]
+script = ExtResource("5_l2ks4")
+soil_texture = ExtResource("1_clsij")
+hurtbox = NodePath("../../Hurtbox")
+soil_sprite = NodePath("../../SoilSprite")
+crop_sprite = NodePath("../../CropSprite")
+tool = "Shovel"
+next_state = "Soil_1"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Soil_1" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "soil_sprite", "crop_sprite")]
+script = ExtResource("5_l2ks4")
+soil_texture = ExtResource("6_ich42")
+hurtbox = NodePath("../../Hurtbox")
+soil_sprite = NodePath("../../SoilSprite")
+crop_sprite = NodePath("../../CropSprite")
+tool = "Shovel"
+next_state = "Soil_2"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Soil_2" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "soil_sprite", "crop_sprite")]
+script = ExtResource("5_l2ks4")
+soil_texture = ExtResource("7_fkmlf")
+hurtbox = NodePath("../../Hurtbox")
+soil_sprite = NodePath("../../SoilSprite")
+crop_sprite = NodePath("../../CropSprite")
+tool = "Shovel"
+next_state = "Soil_3"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Soil_3" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "soil_sprite", "crop_sprite")]
+script = ExtResource("5_l2ks4")
+soil_texture = ExtResource("8_lsfp4")
+hurtbox = NodePath("../../Hurtbox")
+soil_sprite = NodePath("../../SoilSprite")
+crop_sprite = NodePath("../../CropSprite")
+tool = "Seed"
+next_state = "Root_0"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Root_0" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "crop_sprite", "animation_player")]
+script = ExtResource("9_fkmlf")
+hurtbox = NodePath("../../Hurtbox")
+crop_sprite = NodePath("../../CropSprite")
+animation_player = NodePath("../../AnimationPlayer")
+next_state = "Root_1"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Root_1" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "crop_sprite", "animation_player")]
+script = ExtResource("9_fkmlf")
+hurtbox = NodePath("../../Hurtbox")
+crop_sprite = NodePath("../../CropSprite")
+animation_player = NodePath("../../AnimationPlayer")
+crop_index = 1
+next_state = "Root_2"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Root_2" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "crop_sprite", "animation_player")]
+script = ExtResource("9_fkmlf")
+hurtbox = NodePath("../../Hurtbox")
+crop_sprite = NodePath("../../CropSprite")
+animation_player = NodePath("../../AnimationPlayer")
+crop_index = 2
+next_state = "Root_3"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Root_3" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurtbox", "crop_sprite", "animation_player")]
+script = ExtResource("9_fkmlf")
+hurtbox = NodePath("../../Hurtbox")
+crop_sprite = NodePath("../../CropSprite")
+animation_player = NodePath("../../AnimationPlayer")
+crop_index = 3
+next_state = "Root_4"
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Root_4" type="Node" parent="StateMachine"]
+script = ExtResource("5_r3mj7")
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"

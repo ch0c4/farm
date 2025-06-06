@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://bq8cwaiwpwpxr"]
+
+[ext_resource type="Texture2D" uid="uid://bp3rhpw1i7q7a" path="res://Resources/Assets/Crops/potato_00.png" id="1_lrcfb"]
+[ext_resource type="Texture2D" uid="uid://bjfj372e78uf2" path="res://Resources/Assets/Crops/potato_01.png" id="2_5lafv"]
+[ext_resource type="Texture2D" uid="uid://dvpx3j4ocukn1" path="res://Resources/Assets/Crops/potato_02.png" id="3_2i0gh"]
+[ext_resource type="Texture2D" uid="uid://cy7oiw2lj7a1r" path="res://Resources/Assets/Crops/potato_03.png" id="4_qikkh"]
+[ext_resource type="Texture2D" uid="uid://dxafdjj2raybm" path="res://Resources/Assets/Crops/potato_04.png" id="5_csbn5"]
+[ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_dbq1n"]
+[ext_resource type="PackedScene" uid="uid://cyvpja1ccf3yg" path="res://Entities/Spawnables/Crop/potato.tscn" id="7_dbq1n"]
+
+[resource]
+script = ExtResource("6_dbq1n")
+crop_name = "Potato"
+crops_textures = Array[Texture2D]([ExtResource("1_lrcfb"), ExtResource("2_5lafv"), ExtResource("3_2i0gh"), ExtResource("4_qikkh"), ExtResource("5_csbn5")])
+spawn_crop_item = ExtResource("7_dbq1n")
+nb_spawn_crop = 1
+nb_day_of_growning = 5
+metadata/_custom_type_script = "uid://8hxrw36sff1q"

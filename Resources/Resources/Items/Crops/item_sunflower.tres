@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://0ammygfr52gd"]
+
+[ext_resource type="Texture2D" uid="uid://d3ox86pw3ph2x" path="res://Resources/Assets/Crops/radish_05.png" id="1_6ojl5"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_2rtna"]
+
+[resource]
+script = ExtResource("2_2rtna")
+item_name = "Radish"
+description = "A quick-growing red root with a peppery bite."
+item_texture = ExtResource("1_6ojl5")
+type = 3
+uses = Array[int]([6, 1])
+rarity = 0
+stackable = true
+max_stack = 20
+price = 45
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

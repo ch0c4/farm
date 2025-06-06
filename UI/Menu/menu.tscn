@@ -1,0 +1,296 @@
+[gd_scene load_steps=13 format=3 uid="uid://crteiv8d2xxi4"]
+
+[ext_resource type="Script" uid="uid://bxuy17w7hdq15" path="res://UI/Menu/Scripts/menu.gd" id="1_gqyth"]
+[ext_resource type="Texture2D" uid="uid://d1rnno13s2st3" path="res://UI/Assets/nine_path_panel_map.png" id="2_ghw63"]
+[ext_resource type="PackedScene" uid="uid://cp64vey8nrl3x" path="res://UI/InventorySlot/inventory_slot.tscn" id="2_orlfr"]
+[ext_resource type="Texture2D" uid="uid://iaxc6qqaedlh" path="res://UI/Assets/nine_path_panel_wood2.png" id="3_23b81"]
+[ext_resource type="PackedScene" uid="uid://p7yyn3ak5jga" path="res://Entities/Player/player_body.tscn" id="4_ghw63"]
+[ext_resource type="Texture2D" uid="uid://dilsact5631mq" path="res://Entities/Player/Assets/IDLE/base_idle_strip9.png" id="5_aqva8"]
+[ext_resource type="Texture2D" uid="uid://d051mxe11s3il" path="res://Entities/Player/Assets/IDLE/spikeyhair_idle_strip9.png" id="6_hyp5l"]
+[ext_resource type="Texture2D" uid="uid://5csrl3qf30dv" path="res://Entities/Player/Assets/IDLE/tools_idle_strip9.png" id="7_v6gp1"]
+[ext_resource type="FontFile" uid="uid://bwk2lwjjc583n" path="res://UI/Assets/8-BIT WONDER.TTF" id="8_ghw63"]
+
+[sub_resource type="Animation" id="Animation_ormuk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerBody:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_aqva8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerBody:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_hyp5l")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerBody:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_v6gp1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerBody:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerBody:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerBody:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qlic5"]
+resource_name = "default"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerBody:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_aqva8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerBody:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_hyp5l")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerBody:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_v6gp1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerBody:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerBody:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerBody:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3l467"]
+_data = {
+&"RESET": SubResource("Animation_ormuk"),
+&"default": SubResource("Animation_qlic5")
+}
+
+[node name="Menu" type="Control"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1120.0
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gqyth")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ghw63")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginTop" type="Panel" parent="NinePatchRect/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture = ExtResource("3_23b81")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="PlayerBody" parent="NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer/NinePatchRect" instance=ExtResource("4_ghw63")]
+position = Vector2(60, 67)
+scale = Vector2(5, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer/NinePatchRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_3l467")
+}
+autoplay = "default"
+
+[node name="Pseudo" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ghw63")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="InventoryGridContainer" type="GridContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
+
+[node name="InventorySlot" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="NinePatchRect/VBoxContainer/HBoxContainer/InventoryGridContainer" instance=ExtResource("2_orlfr")]
+layout_mode = 2

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://bkvco4m1hqhp6"]
+
+[ext_resource type="Texture2D" uid="uid://ol1j4eun22ke" path="res://Resources/Assets/Crops/parsnip_00.png" id="1_llrqf"]
+[ext_resource type="Texture2D" uid="uid://dau37uocjh6w6" path="res://Resources/Assets/Crops/parsnip_01.png" id="2_hnkox"]
+[ext_resource type="Texture2D" uid="uid://dv4f21b36wj6v" path="res://Resources/Assets/Crops/parsnip_02.png" id="3_frq11"]
+[ext_resource type="Texture2D" uid="uid://d3gxiytdqxhlh" path="res://Resources/Assets/Crops/parsnip_03.png" id="4_1i28d"]
+[ext_resource type="Texture2D" uid="uid://du278je3dxk76" path="res://Resources/Assets/Crops/parsnip_04.png" id="5_yynwb"]
+[ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_xtyem"]
+[ext_resource type="PackedScene" uid="uid://dvfqgqfpnfvir" path="res://Entities/Spawnables/Crop/parsnip.tscn" id="7_xtyem"]
+
+[resource]
+script = ExtResource("6_xtyem")
+crop_name = "Parsnip"
+crops_textures = Array[Texture2D]([ExtResource("1_llrqf"), ExtResource("2_hnkox"), ExtResource("3_frq11"), ExtResource("4_1i28d"), ExtResource("5_yynwb")])
+spawn_crop_item = ExtResource("7_xtyem")
+nb_spawn_crop = 1
+nb_day_of_growning = 4
+metadata/_custom_type_script = "uid://8hxrw36sff1q"

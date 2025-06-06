@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dim3njrq8mb6i"]
+[gd_scene load_steps=55 format=3 uid="uid://dim3njrq8mb6i"]
 
 [ext_resource type="PackedScene" uid="uid://p7yyn3ak5jga" path="res://Entities/Player/player_body.tscn" id="1_mv1ah"]
 [ext_resource type="Script" uid="uid://csvodtk7g0jpk" path="res://Entities/Player/Scripts/player.gd" id="1_slvv8"]
@@ -37,6 +37,8 @@
 [ext_resource type="Script" uid="uid://blm2oo2ljwa7k" path="res://Entities/Player/Scripts/States/player_walking_state.gd" id="34_53w1c"]
 [ext_resource type="Script" uid="uid://ci8iq63crm0et" path="res://Entities/Player/Scripts/States/player_interact_simple_state.gd" id="36_c0fwy"]
 [ext_resource type="Script" uid="uid://c7xgkf45de25a" path="res://Entities/Player/Scripts/States/player_carry_state.gd" id="37_c0fwy"]
+[ext_resource type="Script" uid="uid://fsu8ixuntpop" path="res://Entities/Player/Scripts/States/player_dig_state.gd" id="38_fe32i"]
+[ext_resource type="PackedScene" uid="uid://dpi36hpfwogp6" path="res://Entities/Collectables/Crop/crop.tscn" id="39_rkx17"]
 
 [sub_resource type="Resource" id="Resource_c0fwy"]
 script = ExtResource("2_siu7b")
@@ -1145,10 +1147,12 @@ script = ExtResource("37_c0fwy")
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
-script = ExtResource("36_c0fwy")
+[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
+script = ExtResource("38_fe32i")
 anim_name = "dig"
 animation_player = NodePath("../../AnimationPlayer")
+hitbox = NodePath("../../Hitbox")
+crop_scene = ExtResource("39_rkx17")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Doing" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]

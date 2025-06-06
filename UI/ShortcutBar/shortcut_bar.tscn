@@ -11,24 +11,18 @@ script = ExtResource("1_rcecx")
 
 [node name="Shortcut1" parent="." instance=ExtResource("2_me2qg")]
 layout_mode = 2
-drag_preview_pivot_offset = Vector2(5, 5)
 
 [node name="Shortcut2" parent="." instance=ExtResource("2_me2qg")]
 layout_mode = 2
-drag_preview_pivot_offset = Vector2(5, 5)
 
 [node name="Shortcut3" parent="." instance=ExtResource("2_me2qg")]
 layout_mode = 2
-drag_preview_pivot_offset = Vector2(5, 5)
 
 [node name="Shortcut4" parent="." instance=ExtResource("2_me2qg")]
 layout_mode = 2
-drag_preview_pivot_offset = Vector2(5, 5)
 
 [node name="Shortcut5" parent="." instance=ExtResource("2_me2qg")]
 layout_mode = 2
-drag_preview_pivot_offset = Vector2(5, 5)
 
 [node name="Shortcut6" parent="." instance=ExtResource("2_me2qg")]
 layout_mode = 2
-drag_preview_pivot_offset = Vector2(5, 5)

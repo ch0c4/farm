@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://14immnucilhf"]
+
+[ext_resource type="Texture2D" uid="uid://ugvvihr5tmsq" path="res://Resources/Assets/Gems/rock.png" id="1_ceikv"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_8r5iv"]
+
+[resource]
+script = ExtResource("2_8r5iv")
+item_name = "Rock"
+description = "A common chunk of stone. Useful as a basic material for crafting or building structures."
+item_texture = ExtResource("1_ceikv")
+type = 0
+uses = Array[int]([1, 0])
+rarity = 0
+stackable = true
+max_stack = 99
+price = 10
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvfqgqfpnfvir"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_1uqc3"]
+[ext_resource type="Resource" uid="uid://rvekwl6gs6" path="res://Resources/Resources/Items/Crops/item_parsnip.tres" id="2_1uqc3"]
+[ext_resource type="Texture2D" uid="uid://by5wqy88f8xfd" path="res://Resources/Assets/Crops/parsnip_05.png" id="3_y5k1k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wbtb"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjbjd"]
+radius = 9.0
+
+[node name="Parsnip" instance=ExtResource("1_1uqc3")]
+item = ExtResource("2_1uqc3")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_y5k1k")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_3wbtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_xjbjd")

@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2pa2fncwfrw7"]
-
-[ext_resource type="PackedScene" uid="uid://cjcbrl1yfrqjf" path="res://Entities/Spawnables/Gem/gem.tscn" id="1_phwso"]
-[ext_resource type="Resource" uid="uid://14immnucilhf" path="res://Resources/Resources/Items/item_rock.tres" id="2_526od"]
-
-[node name="RockGem" instance=ExtResource("1_phwso")]
-item = ExtResource("2_526od")

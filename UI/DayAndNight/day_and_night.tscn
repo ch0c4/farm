@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3be3lhbs21xd"]
+
+[ext_resource type="Script" uid="uid://bxo64n7e7l78n" path="res://UI/DayAndNight/Scripts/day_and_night.gd" id="1_tfew3"]
+
+[node name="DayAndNight" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.172549, 0)
+script = ExtResource("1_tfew3")

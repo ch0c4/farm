@@ -5,7 +5,11 @@ extends HBoxContainer
 
 func _ready() -> void:
 	update_selection()
-	InventorySystem.drop_item.connect(update_selection)
+	InventorySystem.force_update.connect(update_selection)
+	
+	for slot in slots:
+		if slot is InventorySlot:
+			slot.slot_double_clicked.connect(_on_shortcut_slot_double_clicked)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,3 +37,16 @@ func update_selection() -> void:
 			InventorySystem.item_selected.emit(slots[i].inventory_item)
 		else:
 			slots[i].modulate = Color.WHITE
+
+
+func _on_shortcut_slot_double_clicked(slot: InventorySlot) -> void:
+	if slot.inventory_item == null:
+		return
+	
+	var menu = get_tree().root.find_child("Menu", true, false)
+	if menu:
+		for target in menu.inventory_grid_container.get_children():
+			if target is InventorySlot and target.inventory_item == null:
+				target.set_inventory_item(slot.inventory_item)
+				slot.set_inventory_item(null)
+				return

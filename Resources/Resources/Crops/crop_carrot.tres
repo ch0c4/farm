@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://blbh3xp7qct33"]
+
+[ext_resource type="Texture2D" uid="uid://bjhc10pvmtukb" path="res://Resources/Assets/Crops/carrot_00.png" id="1_va7te"]
+[ext_resource type="Texture2D" uid="uid://bwg3t3uhwwcoe" path="res://Resources/Assets/Crops/carrot_01.png" id="2_368h5"]
+[ext_resource type="Texture2D" uid="uid://vslcfgi6pjxp" path="res://Resources/Assets/Crops/carrot_02.png" id="3_lpj6f"]
+[ext_resource type="Texture2D" uid="uid://dq7hetjbccldu" path="res://Resources/Assets/Crops/carrot_03.png" id="4_5u83w"]
+[ext_resource type="Texture2D" uid="uid://bfe2exdt01rry" path="res://Resources/Assets/Crops/carrot_04.png" id="5_ossp5"]
+[ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_h00la"]
+[ext_resource type="PackedScene" uid="uid://1me8i8hd1mi6" path="res://Entities/Spawnables/Crop/carrot.tscn" id="7_h00la"]
+
+[resource]
+script = ExtResource("6_h00la")
+crop_name = "Carrot"
+crops_textures = Array[Texture2D]([ExtResource("1_va7te"), ExtResource("2_368h5"), ExtResource("3_lpj6f"), ExtResource("4_5u83w"), ExtResource("5_ossp5")])
+spawn_crop_item = ExtResource("7_h00la")
+nb_spawn_crop = 1
+nb_day_of_growning = 4
+metadata/_custom_type_script = "uid://8hxrw36sff1q"

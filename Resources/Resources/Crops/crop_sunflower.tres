@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://dwou422pgjfia"]
+
+[ext_resource type="Texture2D" uid="uid://bsqcpm8fv6pom" path="res://Resources/Assets/Crops/sunflower_00.png" id="1_su1yb"]
+[ext_resource type="Texture2D" uid="uid://m0n85bpmcsts" path="res://Resources/Assets/Crops/sunflower_01.png" id="2_2p18e"]
+[ext_resource type="Texture2D" uid="uid://bpa5m1s82h3r2" path="res://Resources/Assets/Crops/sunflower_02.png" id="3_pb2bw"]
+[ext_resource type="Texture2D" uid="uid://cnbkomq1ik27d" path="res://Resources/Assets/Crops/sunflower_03.png" id="4_co2fe"]
+[ext_resource type="Texture2D" uid="uid://di2vju1cmugc1" path="res://Resources/Assets/Crops/sunflower_04.png" id="5_1fdyx"]
+[ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_shyp8"]
+[ext_resource type="PackedScene" uid="uid://ckgudth3iapxd" path="res://Entities/Spawnables/Crop/sunflower.tscn" id="7_shyp8"]
+
+[resource]
+script = ExtResource("6_shyp8")
+crop_name = "Sunflower"
+crops_textures = Array[Texture2D]([ExtResource("1_su1yb"), ExtResource("2_2p18e"), ExtResource("3_pb2bw"), ExtResource("4_co2fe"), ExtResource("5_1fdyx")])
+spawn_crop_item = ExtResource("7_shyp8")
+nb_spawn_crop = 1
+nb_day_of_growning = 8
+metadata/_custom_type_script = "uid://8hxrw36sff1q"

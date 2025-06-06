@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cg5k578uf4vse"]
+
+[ext_resource type="Texture2D" uid="uid://dss8bg0alhwut" path="res://Resources/Assets/Gems/gem_amethyst.png" id="1_eng5b"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_pajn6"]
+
+[resource]
+script = ExtResource("2_pajn6")
+item_name = "Amethyst"
+description = "A purple gemstone with mystical properties."
+item_texture = ExtResource("1_eng5b")
+type = 0
+uses = Array[int]([1, 6])
+rarity = 2
+stackable = true
+max_stack = 99
+price = 300
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"
