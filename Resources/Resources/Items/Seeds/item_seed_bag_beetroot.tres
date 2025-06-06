@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bf8itrxs0ao37"]
+
+[ext_resource type="Texture2D" uid="uid://kbfjrs3d7q22" path="res://Resources/Assets/Seeds/seedn_bag_beetroot.png" id="1_7x0dg"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_tm6r5"]
+
+[resource]
+script = ExtResource("1_tm6r5")
+item_name = "Beetroot Seeds"
+description = "Seeds for growing beetroots. Plant in rich soil and water daily."
+item_texture = ExtResource("1_7x0dg")
+type = 2
+uses = Array[int]([3])
+rarity = 1
+stackable = true
+max_stack = 20
+price = 40
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

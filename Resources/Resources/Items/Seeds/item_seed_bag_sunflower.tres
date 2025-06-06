@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://7cu1hmsxbghx"]
+
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_okhcj"]
+
+[resource]
+script = ExtResource("1_okhcj")
+item_name = "Sunflower Seeds"
+description = "Seeds that grow tall sunflowers. Can be harvested for oil or resale."
+type = 2
+uses = Array[int]([3])
+rarity = 1
+stackable = true
+max_stack = 20
+price = 50
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

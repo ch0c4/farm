@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dim3njrq8mb6i"]
+[gd_scene load_steps=57 format=3 uid="uid://dim3njrq8mb6i"]
 
 [ext_resource type="PackedScene" uid="uid://p7yyn3ak5jga" path="res://Entities/Player/player_body.tscn" id="1_mv1ah"]
 [ext_resource type="Script" uid="uid://csvodtk7g0jpk" path="res://Entities/Player/Scripts/player.gd" id="1_slvv8"]
@@ -39,6 +39,7 @@
 [ext_resource type="Script" uid="uid://c7xgkf45de25a" path="res://Entities/Player/Scripts/States/player_carry_state.gd" id="37_c0fwy"]
 [ext_resource type="Script" uid="uid://fsu8ixuntpop" path="res://Entities/Player/Scripts/States/player_dig_state.gd" id="38_fe32i"]
 [ext_resource type="PackedScene" uid="uid://dpi36hpfwogp6" path="res://Entities/Collectables/Crop/crop.tscn" id="39_rkx17"]
+[ext_resource type="Script" uid="uid://b8ook65ahbdw4" path="res://Entities/Player/Scripts/States/player_seed_state.gd" id="40_gds62"]
 
 [sub_resource type="Resource" id="Resource_c0fwy"]
 script = ExtResource("2_siu7b")
@@ -57,6 +58,9 @@ height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kx1i7"]
 radius = 6.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_rkx17"]
+size = Vector2(2, 2)
 
 [sub_resource type="Animation" id="Animation_7a1se"]
 length = 0.001
@@ -458,6 +462,20 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("StateMachine/Dig")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"try_dig"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_a8wow"]
@@ -1082,6 +1100,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_slvv8")
@@ -1116,6 +1135,18 @@ position = Vector2(14, -6)
 shape = SubResource("CircleShape2D_kx1i7")
 disabled = true
 
+[node name="TargetTile" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TargetTile"]
+modulate = Color(1, 0, 0, 1)
+mesh = SubResource("QuadMesh_rkx17")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(20, 0)
+collision_mask = 36
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_lub02")
@@ -1147,12 +1178,13 @@ script = ExtResource("37_c0fwy")
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
+[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox", "dig_origin")]
 script = ExtResource("38_fe32i")
 anim_name = "dig"
 animation_player = NodePath("../../AnimationPlayer")
 hitbox = NodePath("../../Hitbox")
 crop_scene = ExtResource("39_rkx17")
+dig_origin = NodePath("../../TargetTile")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Doing" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
@@ -1170,6 +1202,12 @@ metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 [node name="Mining" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
 script = ExtResource("36_c0fwy")
 anim_name = "mining"
+animation_player = NodePath("../../AnimationPlayer")
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Seed" type="Node" parent="StateMachine" node_paths=PackedStringArray("hitbox", "animation_player")]
+script = ExtResource("40_gds62")
+hitbox = NodePath("../../Hitbox")
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 

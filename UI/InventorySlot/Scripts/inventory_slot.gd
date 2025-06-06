@@ -49,7 +49,6 @@ func _ready() -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		print("click")
 		var now = Time.get_ticks_msec() / 1000.0
 		if now - _last_click_time < DOUBLE_CLICK_TIME:
 			slot_double_clicked.emit(self)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0e4b3r4c6vw4"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_wnd15"]
+[ext_resource type="Resource" uid="uid://c2hd1dmdkjidd" path="res://Resources/Resources/Items/Seeds/item_seed_bag_kale.tres" id="2_wnd15"]
+[ext_resource type="Texture2D" uid="uid://norop8ruiq6w" path="res://Resources/Assets/Seeds/seed_bag_kale.png" id="3_k0q8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuhon"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tfqx"]
+
+[node name="SeedBagKale" instance=ExtResource("1_wnd15")]
+item = ExtResource("2_wnd15")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_k0q8o")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_kuhon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_0tfqx")

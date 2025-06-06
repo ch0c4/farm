@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dksm5wp8tmen6"]
+
+[ext_resource type="Texture2D" uid="uid://didpywo4d8b5o" path="res://Resources/Assets/Seeds/seed_bag_radish.png" id="1_tylon"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_d356b"]
+
+[resource]
+script = ExtResource("2_d356b")
+item_name = "Radish Seeds"
+description = "Quick-growing seeds that produce spicy red radishes."
+item_texture = ExtResource("1_tylon")
+type = 2
+uses = Array[int]([3])
+rarity = 0
+stackable = true
+max_stack = 20
+price = 25
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

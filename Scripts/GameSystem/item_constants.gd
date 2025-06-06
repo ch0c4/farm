@@ -30,3 +30,7 @@ enum ITEM_RARITY {
 	EPIC,
 	LEGENDARY,
 }
+
+const CROP_LIST = {
+	"Beetroot Seeds": preload("res://Resources/Resources/Crops/crop_beetroot.tres")
+}

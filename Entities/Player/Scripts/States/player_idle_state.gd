@@ -15,6 +15,9 @@ func exit() -> void:
 
 
 func physics_update(delta: float) -> void:
+	if not player.active:
+		return
+	
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	if input_vector != Vector2.ZERO:
@@ -24,19 +27,23 @@ func physics_update(delta: float) -> void:
 		CharacterMover.move(player)
 	
 	if Input.is_action_just_pressed("interact"):
-		match player.current_tool:
-			"Axe":
-				transitionned.emit(self, "Axe")
-			"Hammer":
-				transitionned.emit(self, "Hammering")
-			"Pickaxe":
-				transitionned.emit(self, "Mining")
-			"Shovel":
-				transitionned.emit(self, "Dig")
-			"Watering Can":
-				transitionned.emit(self, "Watering")
-			_:
-				transitionned.emit(self, "Doing")
+		print(player.current_tool)
+		if player.current_tool.to_lower().contains("seed"):
+			transitionned.emit(self, "Seed")
+		else:
+			match player.current_tool:
+				"Axe":
+					transitionned.emit(self, "Axe")
+				"Hammer":
+					transitionned.emit(self, "Hammering")
+				"Pickaxe":
+					transitionned.emit(self, "Mining")
+				"Shovel":
+					transitionned.emit(self, "Dig")
+				"Watering Can":
+					transitionned.emit(self, "Watering")
+				_:
+					transitionned.emit(self, "Doing")
 
 
 func _on_item_selected(inventory_item: InventoryItem) -> void:

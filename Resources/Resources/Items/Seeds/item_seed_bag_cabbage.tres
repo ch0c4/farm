@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bnvajuvk1uf4j"]
+
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_3acxn"]
+[ext_resource type="Texture2D" uid="uid://dw0hd8v3rcl21" path="res://Resources/Assets/Seeds/seed_bag_cabbage.png" id="1_7a0ci"]
+
+[resource]
+script = ExtResource("1_3acxn")
+item_name = "Cabbage Seeds"
+description = "Seeds that grow into leafy green cabbages."
+item_texture = ExtResource("1_7a0ci")
+type = 2
+uses = Array[int]([3])
+rarity = 0
+stackable = true
+max_stack = 20
+price = 30
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

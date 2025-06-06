@@ -15,6 +15,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_inventory"):
 		visible = !visible
+		MainInstance.player.active = !visible
 
 
 func add_item(item: Item) -> void:

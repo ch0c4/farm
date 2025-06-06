@@ -7,8 +7,11 @@ extends State
 @export var tool: String
 @export var next_state: String
 
+@onready var crop: Crop = get_owner()
+
 func enter() -> void:
 	hurtbox.hurt.connect(_on_soil_hurt)
+	crop.z_index = -1
 	crop_sprite.texture = null
 	soil_sprite.texture = soil_texture
 

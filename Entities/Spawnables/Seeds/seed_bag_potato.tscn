@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnod1by6d47na"]
+
+[ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_bn344"]
+[ext_resource type="Resource" uid="uid://u6acpjj5qo4g" path="res://Resources/Resources/Items/Seeds/item_seed_bag_potato.tres" id="2_bn344"]
+[ext_resource type="Texture2D" uid="uid://ci8qxnsupfuc3" path="res://Resources/Assets/Seeds/seed_bag_tilseset.png" id="3_5jm1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlkvj"]
+atlas = ExtResource("3_5jm1u")
+region = Rect2(114, 82, 12, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuhon"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tfqx"]
+
+[node name="SeedBagPotato" instance=ExtResource("1_bn344")]
+item = ExtResource("2_bn344")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_rlkvj")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_kuhon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_0tfqx")

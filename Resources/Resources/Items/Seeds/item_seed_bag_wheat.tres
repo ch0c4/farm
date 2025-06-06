@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://ia04hdu7xtvk"]
+
+[ext_resource type="Texture2D" uid="uid://c4bh3ur6b40x3" path="res://Resources/Assets/Seeds/seed_bag_tilseset2.png" id="1_gguw2"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="1_iidjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aek4b"]
+atlas = ExtResource("1_gguw2")
+region = Rect2(2, 2, 12, 13)
+
+[resource]
+script = ExtResource("1_iidjn")
+item_name = "Wheat Seeds"
+description = "Basic seeds that grow into golden wheat."
+item_texture = SubResource("AtlasTexture_aek4b")
+type = 2
+uses = Array[int]([3])
+rarity = 0
+stackable = true
+max_stack = 20
+price = 15
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

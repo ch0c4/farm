@@ -15,6 +15,7 @@ func enter() -> void:
 	hurtbox.hurt.connect(_on_crop_hurt)
 	TimeSystem.new_day.connect(_on_day_changed)
 	animation_player.play("not_watered")
+	crop.z_index = 0
 	is_watered = false
 	watered_days = 0
 	crop_sprite.texture = crop.crops.crops_textures[crop_index]

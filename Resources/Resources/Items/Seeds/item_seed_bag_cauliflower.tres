@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://sh20jssafhsp"]
+
+[ext_resource type="Texture2D" uid="uid://b5t0t5ss8qvad" path="res://Resources/Assets/Seeds/seed_bag_cauliflower.png" id="1_68eel"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_07b26"]
+
+[resource]
+script = ExtResource("2_07b26")
+item_name = "Cauliflower Seeds"
+description = "Seeds that grow large, nutritious cauliflower heads."
+item_texture = ExtResource("1_68eel")
+type = 2
+uses = Array[int]([3])
+rarity = 0
+stackable = true
+max_stack = 20
+price = 60
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

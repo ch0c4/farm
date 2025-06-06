@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://wwq2bbhsish8"]
+
+[ext_resource type="Texture2D" uid="uid://cks20fap8wtfv" path="res://Resources/Assets/Seeds/seed_bag_pumpkin.png" id="1_p2hle"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_y36ed"]
+
+[resource]
+script = ExtResource("2_y36ed")
+item_name = "Pumpkin Seeds"
+description = "Large seeds for growing festive and valuable pumpkins."
+item_texture = ExtResource("1_p2hle")
+type = 2
+uses = Array[int]([3])
+rarity = 2
+stackable = true
+max_stack = 20
+price = 80
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"
