@@ -463,20 +463,6 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("StateMachine/Dig")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"try_dig"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_a8wow"]
 resource_name = "doing"
@@ -577,6 +563,20 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("StateMachine/Seed")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_seeding"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_c0fwy"]
@@ -1178,13 +1178,11 @@ script = ExtResource("37_c0fwy")
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox", "dig_origin")]
+[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
 script = ExtResource("38_fe32i")
 anim_name = "dig"
 animation_player = NodePath("../../AnimationPlayer")
 hitbox = NodePath("../../Hitbox")
-crop_scene = ExtResource("39_rkx17")
-dig_origin = NodePath("../../TargetTile")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Doing" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
@@ -1205,10 +1203,11 @@ anim_name = "mining"
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Seed" type="Node" parent="StateMachine" node_paths=PackedStringArray("hitbox", "animation_player")]
+[node name="Seed" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "dig_origin")]
 script = ExtResource("40_gds62")
-hitbox = NodePath("../../Hitbox")
 animation_player = NodePath("../../AnimationPlayer")
+crop_scene = ExtResource("39_rkx17")
+dig_origin = NodePath("../../TargetTile")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]

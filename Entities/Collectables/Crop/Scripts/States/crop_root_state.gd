@@ -15,7 +15,7 @@ func enter() -> void:
 	hurtbox.hurt.connect(_on_crop_hurt)
 	TimeSystem.new_day.connect(_on_day_changed)
 	animation_player.play("not_watered")
-	crop.z_index = 0
+	crop.z_index = -1
 	is_watered = false
 	watered_days = 0
 	crop_sprite.texture = crop.crops.crops_textures[crop_index]
@@ -31,7 +31,7 @@ func _on_day_changed(_day_count: int) -> void:
 		watered_days += 1
 		is_watered = false
 	
-	animation_player.play("no_watered")
+	animation_player.play("not_watered")
 	
 	var growth_days_per_stage := crop.crops.nb_day_of_growning / 5.0
 	

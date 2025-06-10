@@ -22,7 +22,6 @@ var current_inventory_item: InventoryItem = null: set = set_current_inventory_it
 func set_current_inventory_item(value: InventoryItem) -> void:
 		current_inventory_item = value
 		if value != null and (value.item.type == ItemConstants.ITEM_TYPE.TOOL or value.item.type == ItemConstants.ITEM_TYPE.SEED):
-			print(value.item.item_name)
 			current_tool = value.item.item_name
 
 
