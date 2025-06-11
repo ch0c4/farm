@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 
 @export_category("Map info")
 @export var ground_tilemap: TileMapLayer
+@export var lake_tilemap: TileMapLayer
 @export var tile_size := 16
 
 

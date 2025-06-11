@@ -34,8 +34,8 @@ func _on_seeding() -> void:
 	if ground_tilemap == null:
 		return
 
-	var local_dig_pos := player.ground_tilemap.to_local(dig_position)
-	var cell_coords := player.ground_tilemap.local_to_map(local_dig_pos)
+	var local_dig_pos := ground_tilemap.to_local(dig_position)
+	var cell_coords := ground_tilemap.local_to_map(local_dig_pos)
 
 	if dug_tiles.has(cell_coords):
 		return

@@ -20,6 +20,7 @@ enum ITEM_USE {
 	HARVESTING,
 	EATING,
 	SELLING,
+	FISHING
 }
 
 # Rarity Levels

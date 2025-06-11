@@ -41,6 +41,8 @@ func physics_update(delta: float) -> void:
 					transitionned.emit(self, "Dig")
 				"Watering Can":
 					transitionned.emit(self, "Watering")
+				"Fishing Rod":
+					transitionned.emit(self, "Fishing")
 				_:
 					transitionned.emit(self, "Doing")
 

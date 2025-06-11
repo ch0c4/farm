@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dim3njrq8mb6i"]
+[gd_scene load_steps=70 format=3 uid="uid://dim3njrq8mb6i"]
 
 [ext_resource type="PackedScene" uid="uid://p7yyn3ak5jga" path="res://Entities/Player/player_body.tscn" id="1_mv1ah"]
 [ext_resource type="Script" uid="uid://csvodtk7g0jpk" path="res://Entities/Player/Scripts/player.gd" id="1_slvv8"]
@@ -33,13 +33,23 @@
 [ext_resource type="Texture2D" uid="uid://b035icglmxoci" path="res://Entities/Player/Assets/WATERING/spikeyhair_watering_strip5.png" id="27_53w1c"]
 [ext_resource type="Texture2D" uid="uid://dnkjt6jj4f3rr" path="res://Entities/Player/Assets/WATERING/tools_watering_strip5.png" id="28_siu7b"]
 [ext_resource type="Script" uid="uid://b0bbe0bk7tj88" path="res://Scripts/StateMachine/state_machine.gd" id="29_80ryp"]
+[ext_resource type="Texture2D" uid="uid://d1ybruxcx64v6" path="res://Entities/Player/Assets/CASTING/base_casting_strip15.png" id="33_d17g3"]
 [ext_resource type="Script" uid="uid://cowehr2cmg7no" path="res://Entities/Player/Scripts/States/player_idle_state.gd" id="33_l3oqu"]
+[ext_resource type="Texture2D" uid="uid://bqdhv7h74xtws" path="res://Entities/Player/Assets/CASTING/spikeyhair_casting_strip15.png" id="34_23o0h"]
 [ext_resource type="Script" uid="uid://blm2oo2ljwa7k" path="res://Entities/Player/Scripts/States/player_walking_state.gd" id="34_53w1c"]
+[ext_resource type="Texture2D" uid="uid://cv4xmy0dvrfxd" path="res://Entities/Player/Assets/CASTING/tools_casting_strip15.png" id="35_pagiw"]
 [ext_resource type="Script" uid="uid://ci8iq63crm0et" path="res://Entities/Player/Scripts/States/player_interact_simple_state.gd" id="36_c0fwy"]
+[ext_resource type="Texture2D" uid="uid://bofbng57icrpd" path="res://Entities/Player/Assets/REELING/base_reeling_strip13.png" id="36_fyltw"]
+[ext_resource type="Texture2D" uid="uid://bvfbbu1fa2jsb" path="res://Entities/Player/Assets/REELING/spikeyhair_reeling_strip13.png" id="37_1birn"]
 [ext_resource type="Script" uid="uid://c7xgkf45de25a" path="res://Entities/Player/Scripts/States/player_carry_state.gd" id="37_c0fwy"]
+[ext_resource type="Texture2D" uid="uid://csxjfar71jyb7" path="res://Entities/Player/Assets/REELING/tools_reeling_strip13.png" id="38_58aja"]
 [ext_resource type="Script" uid="uid://fsu8ixuntpop" path="res://Entities/Player/Scripts/States/player_dig_state.gd" id="38_fe32i"]
+[ext_resource type="Texture2D" uid="uid://c1w32g4wc11l0" path="res://Entities/Player/Assets/WAITING/base_waiting_strip9.png" id="39_fyltw"]
 [ext_resource type="PackedScene" uid="uid://dpi36hpfwogp6" path="res://Entities/Collectables/Crop/crop.tscn" id="39_rkx17"]
+[ext_resource type="Texture2D" uid="uid://b7ki2njtx61qa" path="res://Entities/Player/Assets/WAITING/spikeyhair_waiting_strip9.png" id="40_1birn"]
 [ext_resource type="Script" uid="uid://b8ook65ahbdw4" path="res://Entities/Player/Scripts/States/player_seed_state.gd" id="40_gds62"]
+[ext_resource type="Texture2D" uid="uid://c7rowrmy3ekm3" path="res://Entities/Player/Assets/WAITING/tools_waiting_strip9.png" id="41_58aja"]
+[ext_resource type="Script" uid="uid://cmc6o0jub2k7g" path="res://Entities/Player/Scripts/States/player_fishing_state.gd" id="48_1birn"]
 
 [sub_resource type="Resource" id="Resource_c0fwy"]
 script = ExtResource("2_siu7b")
@@ -159,6 +169,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TargetTile:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 19)]
 }
 
 [sub_resource type="Animation" id="Animation_owvpp"]
@@ -361,6 +383,133 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mr25g"]
+resource_name = "casting"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerBody:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("33_d17g3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerBody:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("34_23o0h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerBody:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_pagiw")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerBody:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerBody:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerBody:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(30, 19)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("StateMachine/Fishing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_fishing"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TargetTile:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 19)]
 }
 
 [sub_resource type="Animation" id="Animation_0poeq"]
@@ -882,6 +1031,186 @@ tracks/7/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_vjwoo"]
+resource_name = "reeling"
+length = 1.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerBody:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("36_fyltw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerBody:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("37_1birn")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerBody:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("38_58aja")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerBody:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerBody:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerBody:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_bs7lp"]
+resource_name = "waiting"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerBody:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_fyltw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerBody:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("40_1birn")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerBody:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("41_58aja")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerBody:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerBody:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerBody:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(14, -6)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_x1y6q"]
 resource_name = "walking"
 length = 0.8
@@ -1090,11 +1419,14 @@ _data = {
 &"RESET": SubResource("Animation_7a1se"),
 &"axe": SubResource("Animation_owvpp"),
 &"carry": SubResource("Animation_ap3xn"),
+&"casting": SubResource("Animation_mr25g"),
 &"dig": SubResource("Animation_0poeq"),
 &"doing": SubResource("Animation_a8wow"),
 &"hammering": SubResource("Animation_c0fwy"),
 &"idle": SubResource("Animation_01a4e"),
 &"mining": SubResource("Animation_fe32i"),
+&"reeling": SubResource("Animation_vjwoo"),
+&"waiting": SubResource("Animation_bs7lp"),
 &"walking": SubResource("Animation_x1y6q"),
 &"watering": SubResource("Animation_rkx17")
 }
@@ -1137,6 +1469,7 @@ disabled = true
 
 [node name="TargetTile" type="Marker2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(30, 19)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="TargetTile"]
 modulate = Color(1, 0, 0, 1)
@@ -1189,6 +1522,13 @@ metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 script = ExtResource("36_c0fwy")
 anim_name = "doing"
 animation_player = NodePath("../../AnimationPlayer")
+metadata/_custom_type_script = "uid://7ohq6nwpt6db"
+
+[node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("hitbox", "animation_player", "target_tile")]
+script = ExtResource("48_1birn")
+hitbox = NodePath("../../Hitbox")
+animation_player = NodePath("../../AnimationPlayer")
+target_tile = NodePath("../../TargetTile")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Hammering" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]

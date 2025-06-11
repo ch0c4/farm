@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://de6u4epjwxp7p"]
+
+[ext_resource type="Texture2D" uid="uid://cqsab1r8i7d2i" path="res://Resources/Assets/Tools/rod.png" id="1_k8ibv"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_78pdk"]
+
+[resource]
+script = ExtResource("2_78pdk")
+item_name = "Fishing Rod"
+description = "A basic tool used to catch fish in lakes, rivers, and oceans. Essential for fishing activities and unlocking aquatic resources."
+item_texture = ExtResource("1_k8ibv")
+type = 1
+uses = Array[int]([4])
+rarity = 0
+stackable = false
+max_stack = 1
+price = 1
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"
