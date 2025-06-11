@@ -41,6 +41,7 @@ lake_tilemap = NodePath("../Map/Lake")
 zoom = Vector2(3, 3)
 
 [node name="Tree" parent="." instance=ExtResource("3_t0d6o")]
+visible = false
 position = Vector2(712, 384)
 
 [node name="FishingRod" parent="." instance=ExtResource("5_65re6")]

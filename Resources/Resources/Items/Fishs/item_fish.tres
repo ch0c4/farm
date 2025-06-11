@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://n0t3yi0pxg0v"]
+
+[ext_resource type="Texture2D" uid="uid://v1kwxiofwblh" path="res://Entities/Fish/Assets/fish_orange_spritesheet.png" id="1_2ngqp"]
+[ext_resource type="Script" uid="uid://bmbvkipdyn8i5" path="res://Resources/Scripts/item.gd" id="2_te1c0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssy24"]
+atlas = ExtResource("1_2ngqp")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_te1c0")
+item_name = "Fish"
+description = "A common freshwater fish. Can be cooked, sold, or used in crafting recipes."
+item_texture = SubResource("AtlasTexture_ssy24")
+type = 0
+uses = Array[int]([5, 6])
+rarity = 2
+stackable = true
+max_stack = 99
+price = 30
+metadata/_custom_type_script = "uid://bmbvkipdyn8i5"

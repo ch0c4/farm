@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl3pa6n6prvoa"]
+[gd_scene load_steps=7 format=3 uid="uid://cl3pa6n6prvoa"]
 
 [ext_resource type="PackedScene" uid="uid://bnfmj67wh16s2" path="res://Entities/Spawnables/Spawnable.tscn" id="1_x324g"]
+[ext_resource type="Script" uid="uid://71k3dinem66v" path="res://Entities/Spawnables/Fish/Scripts/fish.gd" id="2_crehm"]
 [ext_resource type="Texture2D" uid="uid://ljfkwqatwaoi" path="res://Entities/Spawnables/Fish/Assets/fish_orange_spritesheet.png" id="2_xuw15"]
+[ext_resource type="Resource" uid="uid://n0t3yi0pxg0v" path="res://Resources/Resources/Items/Fishs/item_fish.tres" id="3_577cu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xuw15"]
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_crehm"]
+radius = 8.0
 
 [node name="Fish" instance=ExtResource("1_x324g")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_crehm")
+item = ExtResource("3_577cu")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_xuw15")
@@ -17,6 +24,9 @@ vframes = 4
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_xuw15")
+
+[node name="Area2D" parent="." index="2"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_crehm")

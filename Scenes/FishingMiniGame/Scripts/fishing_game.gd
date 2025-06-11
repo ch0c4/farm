@@ -1,11 +1,24 @@
 extends Control
 
+@export var progress_bar_danger_texture: Texture2D
+@export var progress_bar_warning_texture: Texture2D
+@export var progress_bar_success_texture: Texture2D
+
 @onready var catch_bar: TextureProgressBar = %CatchBar
 @onready var target: Area2D = %Target
 
 var on_catch := false
 var catch_speed := 0.3
-var catching_value := 70.0
+var catching_value := 30.0:
+	set(value):
+		catching_value = value
+		if value <= 30.0:
+			catch_bar.texture_progress = progress_bar_danger_texture
+		elif value > 30.0 and value <= 50.0:
+			catch_bar.texture_progress = progress_bar_warning_texture
+		else:
+			catch_bar.texture_progress = progress_bar_success_texture
+
 
 func _ready() -> void:
 	target.target_entered.connect(_on_target_entered)

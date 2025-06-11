@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch1madr83vndl"]
+[gd_scene load_steps=12 format=3 uid="uid://ch1madr83vndl"]
 
 [ext_resource type="Texture2D" uid="uid://cxdk8t4syu4pg" path="res://UI/Assets/dt_box.png" id="1_ts5ws"]
 [ext_resource type="Script" uid="uid://bluedty6rthj7" path="res://Scenes/FishingMiniGame/Scripts/fishing_game.gd" id="1_xsfrt"]
 [ext_resource type="Texture2D" uid="uid://gme2o4cqqot" path="res://Scenes/FishingMiniGame/Assets/progressbar_under.png" id="2_e4epf"]
-[ext_resource type="Texture2D" uid="uid://bgikkxihvroh5" path="res://Scenes/FishingMiniGame/Assets/progressbar_progress.png" id="3_fbljp"]
+[ext_resource type="Texture2D" uid="uid://cbqe14aw43nr4" path="res://Scenes/FishingMiniGame/Assets/progressbar_progress_danger.png" id="2_lo4is"]
+[ext_resource type="Texture2D" uid="uid://bgikkxihvroh5" path="res://Scenes/FishingMiniGame/Assets/progressbar_progress_warning.png" id="3_jiqpj"]
 [ext_resource type="PackedScene" uid="uid://gkijwo7c5q7w" path="res://Entities/Fish/fish.tscn" id="4_fbljp"]
+[ext_resource type="Texture2D" uid="uid://bisx6ctbscsc4" path="res://Scenes/FishingMiniGame/Assets/progressbar_progress_success.png" id="4_pd4ks"]
 [ext_resource type="PackedScene" uid="uid://cccn455tomp51" path="res://Scenes/FishingMiniGame/target.tscn" id="5_4rwow"]
 [ext_resource type="Script" uid="uid://bwbarp8rhxlu6" path="res://Scripts/CharacterSystems/movement_stats.gd" id="6_6ag18"]
 
@@ -43,6 +45,9 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xsfrt")
+progress_bar_danger_texture = ExtResource("2_lo4is")
+progress_bar_warning_texture = ExtResource("3_jiqpj")
+progress_bar_success_texture = ExtResource("4_pd4ks")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="FishingGame"]
 layout_mode = 1
@@ -79,13 +84,14 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+value = 80.0
 nine_patch_stretch = true
 stretch_margin_left = 1
 stretch_margin_top = 2
 stretch_margin_right = 1
 stretch_margin_bottom = 2
 texture_under = ExtResource("2_e4epf")
-texture_progress = ExtResource("3_fbljp")
+texture_progress = ExtResource("4_pd4ks")
 
 [node name="AquaContainer" type="PanelContainer" parent="FishingGame/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2

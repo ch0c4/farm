@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgikkxihvroh5"
-path="res://.godot/imported/progressbar_progress.png-23e0d746c6b3891122b81689c4918c9a.ctex"
+uid="uid://bisx6ctbscsc4"
+path="res://.godot/imported/progressbar_progress_success.png-ccca0b9639a1126fd23a5a2226e6b89d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/FishingMiniGame/Assets/progressbar_progress.png"
-dest_files=["res://.godot/imported/progressbar_progress.png-23e0d746c6b3891122b81689c4918c9a.ctex"]
+source_file="res://Scenes/FishingMiniGame/Assets/progressbar_progress_success.png"
+dest_files=["res://.godot/imported/progressbar_progress_success.png-ccca0b9639a1126fd23a5a2226e6b89d.ctex"]
 
 [params]
 

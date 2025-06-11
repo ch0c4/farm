@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ljfkwqatwaoi"
-path="res://.godot/imported/fish_orange_spritesheet.png-2aa90f6f46387b5a72d669e01c00418e.ctex"
+uid="uid://bgikkxihvroh5"
+path="res://.godot/imported/progressbar_progress_warning.png-2369a3d9986af524f68cd8fa676864c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Spawnables/Fish/Assets/fish_orange_spritesheet.png"
-dest_files=["res://.godot/imported/fish_orange_spritesheet.png-2aa90f6f46387b5a72d669e01c00418e.ctex"]
+source_file="res://Scenes/FishingMiniGame/Assets/progressbar_progress_warning.png"
+dest_files=["res://.godot/imported/progressbar_progress_warning.png-2369a3d9986af524f68cd8fa676864c8.ctex"]
 
 [params]
 

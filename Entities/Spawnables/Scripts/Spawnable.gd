@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Spawnable extends RigidBody2D
 
 @onready var area_2d: Area2D = $Area2D
 

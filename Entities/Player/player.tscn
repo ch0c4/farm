@@ -1472,6 +1472,7 @@ unique_name_in_owner = true
 position = Vector2(30, 19)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="TargetTile"]
+visible = false
 modulate = Color(1, 0, 0, 1)
 mesh = SubResource("QuadMesh_rkx17")
 
