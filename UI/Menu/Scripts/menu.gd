@@ -11,9 +11,12 @@ func _ready() -> void:
 			slot.slot_double_clicked.connect(_on_inventory_slot_double_clicked)
 			
 
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_inventory"):
+		visible = !visible
+		MainInstance.player.active = !visible
+	
+	if event.is_action_pressed("exit_current") and visible:
 		visible = !visible
 		MainInstance.player.active = !visible
 

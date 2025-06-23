@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://bru7fbp1yl3cs"]
+
+[ext_resource type="Texture2D" uid="uid://dh6dak1e78fed" path="res://UI/Menu/Assets/Box/dt_box.png" id="1_0vna5"]
+[ext_resource type="FontFile" uid="uid://b2st278pe8b8s" path="res://UI/Menu/Assets/Retro Gaming.ttf" id="2_q56nd"]
+[ext_resource type="Texture2D" uid="uid://d2prka8euupwo" path="res://UI/Menu/Assets/indicator.png" id="3_r65kc"]
+[ext_resource type="Texture2D" uid="uid://bxhhj1kj8vrd8" path="res://UI/Menu/Assets/Box/w_box.png" id="4_b1m06"]
+
+[node name="BuyComponent" type="NinePatchRect"]
+custom_minimum_size = Vector2(90, 20)
+texture = ExtResource("1_0vna5")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q56nd")
+theme_override_font_sizes/font_size = 7
+text = "Buy"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="UpCounter" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+texture_normal = ExtResource("3_r65kc")
+stretch_mode = 3
+flip_v = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(17, 20)
+layout_mode = 2
+texture = ExtResource("4_b1m06")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="CounterLabel" type="Label" parent="HBoxContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -3.22917
+offset_right = 3.0
+offset_bottom = 3.22917
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q56nd")
+theme_override_font_sizes/font_size = 5
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DownCounter" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_r65kc")
+stretch_mode = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
+self_modulate = Color(0.710891, 0.708839, 0, 1)
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_b1m06")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="PriceLabel" type="Label" parent="HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -3.22917
+offset_right = 18.0
+offset_bottom = 3.22917
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q56nd")
+theme_override_font_sizes/font_size = 5
+text = "200"
+vertical_alignment = 1
+
+[node name="CurrencyLabel" type="Label" parent="HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -3.22917
+offset_right = -6.0
+offset_bottom = 3.22917
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_q56nd")
+theme_override_font_sizes/font_size = 5
+text = "C"
+horizontal_alignment = 2
+vertical_alignment = 1

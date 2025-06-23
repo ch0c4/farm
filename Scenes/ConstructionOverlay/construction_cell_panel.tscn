@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cum1vxfdpqykv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bovlj"]
+bg_color = Color(0.5, 0.5, 0.5, 0.5)
+border_color = Color(0, 0, 0, 1)
+
+[node name="ConstructionCellPanel" type="Panel"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bovlj")

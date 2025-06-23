@@ -43,8 +43,6 @@ func physics_update(delta: float) -> void:
 					transitionned.emit(self, "Watering")
 				"Fishing Rod":
 					transitionned.emit(self, "Fishing")
-				_:
-					transitionned.emit(self, "Doing")
 
 
 func _on_item_selected(inventory_item: InventoryItem) -> void:

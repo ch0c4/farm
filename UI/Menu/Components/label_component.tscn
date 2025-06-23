@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7rthg1cli1f2"]
+
+[ext_resource type="Texture2D" uid="uid://dh6dak1e78fed" path="res://UI/Menu/Assets/Box/dt_box.png" id="1_dkyed"]
+[ext_resource type="Texture2D" uid="uid://bxhhj1kj8vrd8" path="res://UI/Menu/Assets/Box/w_box.png" id="2_pgqsp"]
+[ext_resource type="Texture2D" uid="uid://3mb24q8m4w7x" path="res://UI/Menu/Assets/crate_base.png" id="3_dkyed"]
+[ext_resource type="Texture2D" uid="uid://dbwcbqygjoxbo" path="res://Resources/Assets/Crops/kale_05.png" id="4_dkyed"]
+[ext_resource type="FontFile" uid="uid://b2st278pe8b8s" path="res://UI/Menu/Assets/Retro Gaming.ttf" id="5_ncmcl"]
+
+[node name="LabelComponent" type="NinePatchRect"]
+custom_minimum_size = Vector2(90, 20)
+offset_right = 80.0
+offset_bottom = 20.0
+texture = ExtResource("1_dkyed")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 13)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_pgqsp")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Crate" type="Sprite2D" parent="HBoxContainer/NinePatchRect"]
+position = Vector2(10, 2.5)
+texture = ExtResource("3_dkyed")
+
+[node name="Plant" type="Sprite2D" parent="HBoxContainer/NinePatchRect"]
+position = Vector2(10, -4.5)
+texture = ExtResource("4_dkyed")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ncmcl")
+theme_override_font_sizes/font_size = 8
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1

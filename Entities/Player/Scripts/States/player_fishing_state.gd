@@ -35,7 +35,7 @@ func on_fishing() -> void:
 	var cell_coords := lake_tilemap.local_to_map(local_dig_pos)
 	
 	var tile_data := lake_tilemap.get_cell_tile_data(cell_coords)
-	if tile_data != null and tile_data.get_custom_data("can_fish"):
+	if tile_data != null and tile_data.get_custom_data("type") == "water":
 		animation_player.play("waiting")
 		
 		await get_tree().create_timer(randf_range(3.0, 6.0)).timeout
