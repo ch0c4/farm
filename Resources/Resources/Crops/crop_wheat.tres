@@ -1,18 +1,15 @@
-[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://co6tfdusgffgm"]
+[gd_resource type="Resource" script_class="Crops" load_steps=6 format=3 uid="uid://co6tfdusgffgm"]
 
-[ext_resource type="Texture2D" uid="uid://kea547ynx5uv" path="res://Resources/Assets/Crops/wheat_00.png" id="1_jipkq"]
 [ext_resource type="Texture2D" uid="uid://m2r067qs78xx" path="res://Resources/Assets/Crops/wheat_01.png" id="2_mitb1"]
 [ext_resource type="Texture2D" uid="uid://dtldxu0gtrkhb" path="res://Resources/Assets/Crops/wheat_02.png" id="3_wyhrj"]
 [ext_resource type="Texture2D" uid="uid://bdfx2fuh7h81k" path="res://Resources/Assets/Crops/wheat_03.png" id="4_ms7mi"]
 [ext_resource type="Texture2D" uid="uid://2jj2n16aoxsv" path="res://Resources/Assets/Crops/wheat_04.png" id="5_ue8p3"]
 [ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_jd4xv"]
-[ext_resource type="PackedScene" uid="uid://na648dm688ds" path="res://Entities/Spawnables/Crop/wheat.tscn" id="7_jd4xv"]
 
 [resource]
 script = ExtResource("6_jd4xv")
 crop_name = "Wheat"
-crops_textures = Array[Texture2D]([ExtResource("1_jipkq"), ExtResource("2_mitb1"), ExtResource("3_wyhrj"), ExtResource("4_ms7mi"), ExtResource("5_ue8p3")])
-spawn_crop_item = ExtResource("7_jd4xv")
+crops_textures = Array[Texture2D]([ExtResource("2_mitb1"), ExtResource("3_wyhrj"), ExtResource("4_ms7mi"), ExtResource("5_ue8p3")])
 nb_spawn_crop = 5
 nb_day_of_growning = 4
 metadata/_custom_type_script = "uid://8hxrw36sff1q"

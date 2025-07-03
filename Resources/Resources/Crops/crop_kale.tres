@@ -1,18 +1,15 @@
-[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://co2nyneng1t7m"]
+[gd_resource type="Resource" script_class="Crops" load_steps=6 format=3 uid="uid://co2nyneng1t7m"]
 
-[ext_resource type="Texture2D" uid="uid://cnv4tsoc1olh2" path="res://Resources/Assets/Crops/kale_00.png" id="1_3tum2"]
 [ext_resource type="Texture2D" uid="uid://d3eqe2emjbgd6" path="res://Resources/Assets/Crops/kale_01.png" id="2_8huvx"]
 [ext_resource type="Texture2D" uid="uid://b3rnqumupo62s" path="res://Resources/Assets/Crops/kale_02.png" id="3_teeaa"]
 [ext_resource type="Texture2D" uid="uid://2pqxtfyejm2v" path="res://Resources/Assets/Crops/kale_03.png" id="4_b0fw8"]
 [ext_resource type="Texture2D" uid="uid://dsekqe0vowe45" path="res://Resources/Assets/Crops/kale_04.png" id="5_4r8p5"]
 [ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_78khs"]
-[ext_resource type="PackedScene" uid="uid://bj3fe1piy87i2" path="res://Entities/Spawnables/Crop/kale.tscn" id="7_78khs"]
 
 [resource]
 script = ExtResource("6_78khs")
 crop_name = "Kale"
-crops_textures = Array[Texture2D]([ExtResource("1_3tum2"), ExtResource("2_8huvx"), ExtResource("3_teeaa"), ExtResource("4_b0fw8"), ExtResource("5_4r8p5")])
-spawn_crop_item = ExtResource("7_78khs")
+crops_textures = Array[Texture2D]([ExtResource("2_8huvx"), ExtResource("3_teeaa"), ExtResource("4_b0fw8"), ExtResource("5_4r8p5")])
 nb_spawn_crop = 1
 nb_day_of_growning = 6
 metadata/_custom_type_script = "uid://8hxrw36sff1q"

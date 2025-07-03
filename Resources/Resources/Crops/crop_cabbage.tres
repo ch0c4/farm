@@ -1,18 +1,15 @@
-[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://bq84nmidtbokd"]
+[gd_resource type="Resource" script_class="Crops" load_steps=6 format=3 uid="uid://bq84nmidtbokd"]
 
-[ext_resource type="Texture2D" uid="uid://g6tyh13j4oow" path="res://Resources/Assets/Crops/cabbage_00.png" id="1_fhwa4"]
 [ext_resource type="Texture2D" uid="uid://1n16rmx2rauw" path="res://Resources/Assets/Crops/cabbage_01.png" id="2_nq7xr"]
 [ext_resource type="Texture2D" uid="uid://bfjynphav0hyc" path="res://Resources/Assets/Crops/cabbage_02.png" id="3_hiexo"]
 [ext_resource type="Texture2D" uid="uid://c6kud5u5jcb4t" path="res://Resources/Assets/Crops/cabbage_03.png" id="4_8ywiy"]
 [ext_resource type="Texture2D" uid="uid://bctxl1gl4h8nw" path="res://Resources/Assets/Crops/cabbage_04.png" id="5_lj2h6"]
-[ext_resource type="PackedScene" uid="uid://hxkgyuo0gikk" path="res://Entities/Spawnables/Crop/cabbage.tscn" id="7_fhwa4"]
 [ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="7_l61r3"]
 
 [resource]
 script = ExtResource("7_l61r3")
 crop_name = "Cabbage"
-crops_textures = Array[Texture2D]([ExtResource("1_fhwa4"), ExtResource("2_nq7xr"), ExtResource("3_hiexo"), ExtResource("4_8ywiy"), ExtResource("5_lj2h6")])
-spawn_crop_item = ExtResource("7_fhwa4")
+crops_textures = Array[Texture2D]([ExtResource("2_nq7xr"), ExtResource("3_hiexo"), ExtResource("4_8ywiy"), ExtResource("5_lj2h6")])
 nb_spawn_crop = 1
 nb_day_of_growning = 7
 metadata/_custom_type_script = "uid://8hxrw36sff1q"

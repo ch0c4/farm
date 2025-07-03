@@ -12,7 +12,6 @@ const SECONDS_PER_MINUTE := 60.0
 var day_count := 1:
 	set(value):
 		day_count = value
-		print("new day")
 		new_day.emit(day_count)
 
 var current_hour := START_HOUR

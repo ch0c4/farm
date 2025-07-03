@@ -10,7 +10,6 @@ class_name Player extends CharacterBody2D
 
 
 @onready var target_tile: Marker2D = %TargetTile
-@onready var ray_cast_2D: RayCast2D = $RayCast2D
 
 var facing_direction: int = 1
 
@@ -21,9 +20,11 @@ var can_dig := true
 var current_inventory_item: InventoryItem = null: set = set_current_inventory_item
 
 func set_current_inventory_item(value: InventoryItem) -> void:
-		current_inventory_item = value
-		if value != null and (value.item.type == ItemConstants.ITEM_TYPE.TOOL or value.item.type == ItemConstants.ITEM_TYPE.SEED):
-			current_tool = value.item.item_name
+	current_inventory_item = value
+	if value != null and (value.item.type == ItemConstants.ITEM_TYPE.TOOL or value.item.type == ItemConstants.ITEM_TYPE.SEED):
+		current_tool = value.item.item_name
+	else:
+		current_tool = ""
 
 
 func _ready() -> void:
@@ -34,8 +35,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	flip_sprite()
 	update_target_tile()
-
-	can_dig = false if ray_cast_2D.is_colliding() else true
 
 
 func update_target_tile() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dim3njrq8mb6i"]
+[gd_scene load_steps=67 format=3 uid="uid://dim3njrq8mb6i"]
 
 [ext_resource type="PackedScene" uid="uid://p7yyn3ak5jga" path="res://Entities/Player/player_body.tscn" id="1_mv1ah"]
 [ext_resource type="Script" uid="uid://csvodtk7g0jpk" path="res://Entities/Player/Scripts/player.gd" id="1_slvv8"]
@@ -43,11 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://bvfbbu1fa2jsb" path="res://Entities/Player/Assets/REELING/spikeyhair_reeling_strip13.png" id="37_1birn"]
 [ext_resource type="Script" uid="uid://c7xgkf45de25a" path="res://Entities/Player/Scripts/States/player_carry_state.gd" id="37_c0fwy"]
 [ext_resource type="Texture2D" uid="uid://csxjfar71jyb7" path="res://Entities/Player/Assets/REELING/tools_reeling_strip13.png" id="38_58aja"]
-[ext_resource type="Script" uid="uid://fsu8ixuntpop" path="res://Entities/Player/Scripts/States/player_dig_state.gd" id="38_fe32i"]
 [ext_resource type="Texture2D" uid="uid://c1w32g4wc11l0" path="res://Entities/Player/Assets/WAITING/base_waiting_strip9.png" id="39_fyltw"]
-[ext_resource type="PackedScene" uid="uid://dpi36hpfwogp6" path="res://Entities/Collectables/Crop/crop.tscn" id="39_rkx17"]
 [ext_resource type="Texture2D" uid="uid://b7ki2njtx61qa" path="res://Entities/Player/Assets/WAITING/spikeyhair_waiting_strip9.png" id="40_1birn"]
-[ext_resource type="Script" uid="uid://b8ook65ahbdw4" path="res://Entities/Player/Scripts/States/player_seed_state.gd" id="40_gds62"]
 [ext_resource type="Texture2D" uid="uid://c7rowrmy3ekm3" path="res://Entities/Player/Assets/WAITING/tools_waiting_strip9.png" id="41_58aja"]
 [ext_resource type="Script" uid="uid://cmc6o0jub2k7g" path="res://Entities/Player/Scripts/States/player_fishing_state.gd" id="48_1birn"]
 
@@ -712,20 +709,6 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("StateMachine/Seed")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_on_seeding"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_c0fwy"]
@@ -1476,11 +1459,6 @@ visible = false
 modulate = Color(1, 0, 0, 1)
 mesh = SubResource("QuadMesh_rkx17")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
-target_position = Vector2(20, 0)
-collision_mask = 36
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_lub02")
@@ -1512,11 +1490,10 @@ script = ExtResource("37_c0fwy")
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
-script = ExtResource("38_fe32i")
+[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("36_c0fwy")
 anim_name = "dig"
 animation_player = NodePath("../../AnimationPlayer")
-hitbox = NodePath("../../Hitbox")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Doing" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
@@ -1544,11 +1521,10 @@ anim_name = "mining"
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Seed" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "dig_origin")]
-script = ExtResource("40_gds62")
+[node name="Seed" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("36_c0fwy")
+anim_name = "doing"
 animation_player = NodePath("../../AnimationPlayer")
-crop_scene = ExtResource("39_rkx17")
-dig_origin = NodePath("../../TargetTile")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]

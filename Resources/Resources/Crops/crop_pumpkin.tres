@@ -1,18 +1,15 @@
-[gd_resource type="Resource" script_class="Crops" load_steps=8 format=3 uid="uid://bm2vrxf1kudqs"]
+[gd_resource type="Resource" script_class="Crops" load_steps=6 format=3 uid="uid://bm2vrxf1kudqs"]
 
-[ext_resource type="Texture2D" uid="uid://4agtj6q7ut4f" path="res://Resources/Assets/Crops/pumpkin_00.png" id="1_q3lwl"]
 [ext_resource type="Texture2D" uid="uid://dt6ju3skowwwh" path="res://Resources/Assets/Crops/pumpkin_01.png" id="2_ghiuf"]
 [ext_resource type="Texture2D" uid="uid://bbnxpqv11y3pr" path="res://Resources/Assets/Crops/pumpkin_02.png" id="3_4nugt"]
 [ext_resource type="Texture2D" uid="uid://bh63kd40fhufj" path="res://Resources/Assets/Crops/pumpkin_03.png" id="4_j84e0"]
 [ext_resource type="Texture2D" uid="uid://bpuhtxwvp7nn5" path="res://Resources/Assets/Crops/pumpkin_04.png" id="5_mudoi"]
 [ext_resource type="Script" uid="uid://8hxrw36sff1q" path="res://Resources/Scripts/crops.gd" id="6_ih83w"]
-[ext_resource type="PackedScene" uid="uid://bbklit7u0mdda" path="res://Entities/Spawnables/Crop/pumpkin.tscn" id="7_ih83w"]
 
 [resource]
 script = ExtResource("6_ih83w")
 crop_name = "Pumpkin"
-crops_textures = Array[Texture2D]([ExtResource("1_q3lwl"), ExtResource("2_ghiuf"), ExtResource("3_4nugt"), ExtResource("4_j84e0"), ExtResource("5_mudoi")])
-spawn_crop_item = ExtResource("7_ih83w")
+crops_textures = Array[Texture2D]([ExtResource("2_ghiuf"), ExtResource("3_4nugt"), ExtResource("4_j84e0"), ExtResource("5_mudoi")])
 nb_spawn_crop = 1
 nb_day_of_growning = 13
 metadata/_custom_type_script = "uid://8hxrw36sff1q"
