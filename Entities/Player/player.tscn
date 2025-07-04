@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dim3njrq8mb6i"]
+[gd_scene load_steps=66 format=3 uid="uid://dim3njrq8mb6i"]
 
 [ext_resource type="PackedScene" uid="uid://p7yyn3ak5jga" path="res://Entities/Player/player_body.tscn" id="1_mv1ah"]
 [ext_resource type="Script" uid="uid://csvodtk7g0jpk" path="res://Entities/Player/Scripts/player.gd" id="1_slvv8"]
@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://c1w32g4wc11l0" path="res://Entities/Player/Assets/WAITING/base_waiting_strip9.png" id="39_fyltw"]
 [ext_resource type="Texture2D" uid="uid://b7ki2njtx61qa" path="res://Entities/Player/Assets/WAITING/spikeyhair_waiting_strip9.png" id="40_1birn"]
 [ext_resource type="Texture2D" uid="uid://c7rowrmy3ekm3" path="res://Entities/Player/Assets/WAITING/tools_waiting_strip9.png" id="41_58aja"]
-[ext_resource type="Script" uid="uid://cmc6o0jub2k7g" path="res://Entities/Player/Scripts/States/player_fishing_state.gd" id="48_1birn"]
 
 [sub_resource type="Resource" id="Resource_c0fwy"]
 script = ExtResource("2_siu7b")
@@ -1502,11 +1501,10 @@ anim_name = "doing"
 animation_player = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
-[node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("hitbox", "animation_player", "target_tile")]
-script = ExtResource("48_1birn")
-hitbox = NodePath("../../Hitbox")
+[node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("36_c0fwy")
+anim_name = "doing"
 animation_player = NodePath("../../AnimationPlayer")
-target_tile = NodePath("../../TargetTile")
 metadata/_custom_type_script = "uid://7ohq6nwpt6db"
 
 [node name="Hammering" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]

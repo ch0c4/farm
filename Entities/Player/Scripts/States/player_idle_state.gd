@@ -26,7 +26,7 @@ func physics_update(delta: float) -> void:
 		CharacterMover.decelerate(player, player.movement_stats, delta)
 		CharacterMover.move(player)
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if player.current_tool.to_lower().contains("seed"):
 			transitionned.emit(self, "Seed")
 		else:

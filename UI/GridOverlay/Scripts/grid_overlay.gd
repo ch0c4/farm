@@ -9,11 +9,17 @@ extends Node2D
 @onready var ghost_sprite: Sprite2D = $GhostSprite
 
 
-var show_grid := false
+var show_grid := false:
+	set(value):
+		show_grid = value
+		EventSystem.crop_mode.emit(value)
+
 
 
 func _ready() -> void:
-	print(crop.tile_set.get_terrain_name(1, 0))
+	show_grid = false
+	crop.tile_set.get_terrain_name(0,0)
+
 	if MainInstance.get_current_inventory_item() == null:
 		return
 	
@@ -30,7 +36,7 @@ func _process(_delta: float) -> void:
 	if MainInstance.get_current_inventory_item() == null:
 		return
 	
-	show_grid = Input.is_action_pressed("crop_mode") and MainInstance.get_current_inventory_item().item.type == ItemConstants.ITEM_TYPE.SEED
+	show_grid = Input.is_action_pressed("interact") and MainInstance.get_current_inventory_item().item.type == ItemConstants.ITEM_TYPE.SEED
 	ghost_sprite.texture = MainInstance.get_current_inventory_item().item.item_texture
 	ghost_sprite.visible = show_grid
 
@@ -45,7 +51,7 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if not show_grid:
 		return
 	
@@ -74,10 +80,10 @@ func _draw() -> void:
 func place_tile() -> void:
 	var mouse_pos = ground.get_global_mouse_position()
 	var cell = ground.local_to_map(mouse_pos)
+
+	crop.set_cells_terrain_connect([cell], 0, 0)
+
 	var p = ground.map_to_local(cell)
-
-	crop.set_cell(cell, 1, atlas_coords)
-
 	var c = crop_scene.instantiate() as Crop
 	c.global_position = p
 	c.current_crop = MainInstance.get_current_inventory_item().item.crop
